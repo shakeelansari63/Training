@@ -14,3 +14,8 @@ pip install pymango
 ```
 
 And you are ready to use Mongo DB in HDP
+
+# Invoke MongoDB Shell
+```console
+mongo
+```
