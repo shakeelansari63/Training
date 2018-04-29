@@ -1,0 +1,47 @@
+pipeline {
+  agent any
+  stages {
+    stage('Initialize'){
+      steps {
+        build job: 'Freak-Test/first-test-job'
+       }
+        post {
+            success {
+                echo 'Test Complete'
+            }
+        }
+    }
+
+    stage('Build'){
+      steps {
+        build job: 'Freak-Test/maven-packaging-job'
+     }
+     post {
+        success{
+            echo 'Build Complete'
+        }
+        failure{
+            echo 'Build Fail'
+        }
+     }
+    }
+
+    stage('Deploy'){
+      steps {
+        timeout(time:5, unit:'DAYS'){
+            input message: 'Please approve Checkstyle'
+        }
+
+        build job: 'Freak-test/checkstyle-maven'
+     }
+     post{
+        success{
+            echo 'Checkstyle Complete'
+        }
+        failure{
+            echo 'Checkstyle Fail'
+        }
+     }
+    }
+  }
+}
