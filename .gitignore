@@ -6,6 +6,9 @@
 # Python Notebook
 **/.ipynb_checkpoints
 
+# Electron JS
+**/node_modules/
+
 # Miscellaneous
 *.class
 *.log
