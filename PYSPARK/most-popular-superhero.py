@@ -2,6 +2,7 @@ from pyspark import SparkConf, SparkContext
 
 conf = SparkConf().setMaster("local").setAppName("PopularHero")
 sc = SparkContext(conf = conf)
+sc.setLogLevel('ERROR')
 
 def countCoOccurences(line):
     elements = line.split()
