@@ -20,7 +20,7 @@ def makePairs( userRatings ):
 
 def filterDuplicates( userRatings ):
     ratings = userRatings[1]
-    (movie1, _) = ratings[0]
+    (movie1, _) = ratings[0] 
     (movie2, _) = ratings[1]
     return movie1 < movie2
 
@@ -56,7 +56,8 @@ ratings = data.map(lambda l: l.split()).map(lambda l: (int(l[0]), (int(l[1]), fl
 
 # Emit every movie rated together by the same user.
 # Self-join to find every combination.
-joinedRatings = ratings.join(ratings)
+partitionedRatings = ratings.partitionBy(100)
+joinedRatings = partitionedRatings.join(ratings)
 
 # At this point our RDD consists of userID => ((movieID, rating), (movieID, rating))
 
