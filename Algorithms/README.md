@@ -23,3 +23,5 @@ digraph G {
  }
 array_to_heap
 </details>
+
+### Formula to identify leaf nodes
