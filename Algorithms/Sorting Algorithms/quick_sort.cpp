@@ -8,7 +8,6 @@ void quick_sort_func(int *lst, int start, int end, int pivot);
 // Main Function
 int main ()
 {
-    int i, j;
     // Output the Actual List
     display_list("Input list ...");
 
