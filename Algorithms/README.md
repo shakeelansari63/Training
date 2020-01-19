@@ -6,9 +6,9 @@ data  | 15 | 10 | 9 | 11 | 2 | 7 | 21 | 67 | 12 | 32
 
 ### Heap will be represented
 
-![Alt text](https://g.gravizo.com/source/custom_mark10?https%3A%2F%2Fraw.githubusercontent.com%2FTLmaK0%2Fgravizo%2Fmaster%2FREADME.md)
-
-![](https://g.gravizo.com/svg?
+<details> 
+<summary></summary>
+array_to_heap
 digraph G {
    15 -> 10;
    15 -> 9;
@@ -20,4 +20,5 @@ digraph G {
    11 -> 12;
    2 -> 32;
  }
-)
+array_to_heap
+</details>
