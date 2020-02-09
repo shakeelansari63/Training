@@ -21,10 +21,14 @@ docker-compose -f ./docker-compose.yml up -d
 docker-compose -f ./docker-compose.yml down
 ```
   
-# Install Python Mongo DB connector "pymongo"  
+# Install Python Mongo DB connector "pymongo" and Object-Document Mapper (ODM) "mongoengine"  
 ```console
-pip install pymango
+pip install -r ./requirements.txt
 ```
+  
+# RDBMS vs Document Design  
+## RDBMS model  
+![RDBMS](./img/RDBMS Model.png)
   
 And you are ready to use Mongo DB in HDP  
   

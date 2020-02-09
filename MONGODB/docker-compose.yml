@@ -7,4 +7,4 @@ services:
             - 27017
         hostname: mongo
         volumes: 
-            - $HOME/mongodb/data/db:/data/db
+            - $HOME/dev/mongodb/data/db:/data/db
