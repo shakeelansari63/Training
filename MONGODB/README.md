@@ -35,11 +35,11 @@ pip install -r ./requirements.txt
   
 # How ODM Work
 ![ODM](https://github.com/shakeelansari63/Training/blob/master/MONGODB/img/ODM.png)
-
-  
-And you are ready to use Mongo DB in HDP  
   
 # Invoke MongoDB Shell
 ```console
 mongo
 ```
+  
+# Thanks to FreeCodeCamp course
+[Mongo DB With Python](https://www.youtube.com/watch?v=E-1xI85Zog8&list=WL&index=8&t=206s)
