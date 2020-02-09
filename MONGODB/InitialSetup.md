@@ -28,7 +28,9 @@ pip install -r ./requirements.txt
   
 # RDBMS vs Document Design  
 ## RDBMS model  
-![RDBMS](https://github.com/shakeelansari63/Training/blob/master/MONGODB/img/RDBMS Model.png)
+![RDBMS](https://github.com/shakeelansari63/Training/blob/master/MONGODB/img/RDBMS%20Model.png)
+
+![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
   
 And you are ready to use Mongo DB in HDP  
   
