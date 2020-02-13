@@ -42,16 +42,74 @@ mongo
 ```
   
 # Basic Operation from Mongo Shell
-## List Databases
+### List Databases
 ```mongo
 show dbs
 ```
   
-## Use a Database
+### Use a Database
 ```mongo
 use dbname
 ```
   
-
+### Drop Database
+```mongo
+use dbname
+db.dropDatabase()
+```
+  
+### Create new Database
+```mongo
+use newdbname
+```
+This will create database and switch to it
+  
+### List collection in current database
+```mongo
+show collections
+```
+  
+### Create Collection in Current Database
+```mongo
+db.createCollection('collectionname')
+```
+  
+### Insert single document in collection
+```mongo
+db.collectionname.insert({
+    field1: 'some string value',
+    field2: somenumber,
+    filed3: [some list of values],
+    field4: {
+        subfield1: 'another string',
+        subfield2: Date()
+    }
+})
+```
+  
+### Insert multiple documents in collection
+```mongo
+db.collectionname.insertMany([
+{
+    field1: 'string',
+    field2: number
+},
+{
+    field1: 'string2',
+    field2: number2
+},
+{
+    field1: 'string',
+    field3: true
+}
+])
+```
+  
+### Find all items in Collection
+```mongo
+db.collectionname.find()
+```
+  
+  
 # Thanks to FreeCodeCamp course
 [Mongo DB With Python](https://www.youtube.com/watch?v=E-1xI85Zog8&list=WL&index=8&t=206s)
