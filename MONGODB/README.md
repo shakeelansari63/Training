@@ -41,5 +41,17 @@ pip install -r ./requirements.txt
 mongo
 ```
   
+# Basic Operation from Mongo Shell
+## List Databases
+```mongo
+show dbs
+```
+  
+## Use a Database
+```mongo
+use dbname
+```
+  
+
 # Thanks to FreeCodeCamp course
 [Mongo DB With Python](https://www.youtube.com/watch?v=E-1xI85Zog8&list=WL&index=8&t=206s)
