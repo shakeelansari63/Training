@@ -43,39 +43,39 @@ mongo
   
 # Basic Operation from Mongo Shell
 ### List Databases
-```mongo
+```
 show dbs
 ```
   
 ### Use a Database
-```mongo
+```
 use dbname
 ```
   
 ### Drop Database
-```mongo
+```
 use dbname
 db.dropDatabase()
 ```
   
 ### Create new Database
-```mongo
+```
 use newdbname
 ```
 This will create database and switch to it
   
 ### List collection in current database
-```mongo
+```
 show collections
 ```
   
 ### Create Collection in Current Database
-```mongo
+```
 db.createCollection('collectionname')
 ```
   
 ### Insert single document in collection
-```mongo
+```
 db.collectionname.insert({
     field1: 'some string value',
     field2: somenumber,
@@ -88,7 +88,7 @@ db.collectionname.insert({
 ```
   
 ### Insert multiple documents in collection
-```mongo
+```
 db.collectionname.insertMany([
 {
     field1: 'string',
@@ -106,10 +106,37 @@ db.collectionname.insertMany([
 ```
   
 ### Find all items in Collection
-```mongo
+```
 db.collectionname.find()
 ```
+#### Pretty method can make it more human readabale
+```
+db.collectionname.find().pretty()
+```
   
+### Filter 
+```
+db.collectionname.find({ field : value }).pretty()
+```
   
-# Thanks to FreeCodeCamp course
-[Mongo DB With Python](https://www.youtube.com/watch?v=E-1xI85Zog8&list=WL&index=8&t=206s)
+### Sorting output
+```
+db.collectionname.find().sort({ field: 1})
+```
+Inside sort value 1 is for ascending and -1 fro descending  
+  
+### limit output records
+```
+db.collectionname.find().limit(10)
+```
+  
+### Aggregation
+#### Counting Output records
+```
+db.collectionname.find({ field : value }).count()
+```
+
+# Thanks to courses
+[Mongo DB With Python](https://www.youtube.com/watch?v=E-1xI85Zog8)
+  
+[MongoDb Crash Course](https://www.youtube.com/watch?v=-56x56UppqQ)
