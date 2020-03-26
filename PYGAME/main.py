@@ -1,6 +1,7 @@
 import pygame
 import random
 import math
+from pygame import mixer
 
 
 ## Initialize the Pygame Module
@@ -13,6 +14,11 @@ screen = pygame.display.set_mode((800, 600))
 
 ## Import image for background
 bg = pygame.image.load('assets/bg.png')
+
+
+## Backgroud Music
+mixer.music.load('assets/background.wav')
+mixer.music.play(-1) ## -1 runs it in loop
 
 
 ## Change Window Title
@@ -53,6 +59,8 @@ enemy_speed = 1.2
 move_enemy = [] ## To move enemy as soon as screen load
 move_enemy_down = 32 ## Move enemy down by 32 px
 number_of_enemies = 6
+enemy_die_sound = mixer.Sound('assets/explosion.wav')
+enemy_die_img = pygame.image.load('assets/flame.png')
 
 for i in range(number_of_enemies):
     enemy_img.append(pygame.image.load('assets/alien.png'))
@@ -80,6 +88,7 @@ bullet_posy = 424   ## Y position start at tip of player
 
 bullet_speed = 6
 move_bullet = bullet_speed ## To move enemy as soon as screen load
+bullet_sound = mixer.Sound('assets/laser.wav')
 
 bullet_state = 'READY'
 
@@ -148,6 +157,9 @@ while run_status:
             
             ## Fire new bullet if space is pressed and previous bullet in ready state
             elif event.key == pygame.K_SPACE and bullet_state == 'READY':
+                ## Generate bullet sound
+                bullet_sound.play()
+
                 bullet_posx = player_posx + 16 ## Set Bullet X Position to X+16 of Player
                 fire_bullet()
         
@@ -184,6 +196,12 @@ while run_status:
 
         ## Check if Bullet hit Enemy
         if enemy_colision(i):
+            ## Display Explosion Image
+            screen.blit(enemy_die_img, (enemy_posx[i], enemy_posy[i]))
+
+            ## Play Explosion Sound
+            enemy_die_sound.play()
+
             bullet_ready()
             new_enemy(i)
             score_value += 1
