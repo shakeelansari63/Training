@@ -68,3 +68,43 @@ for event in pygame.event.get():
         if event.key == pygame.K_LEFT:
             ## Some Acion
 ```  
+
+## Draw Rectangle
+Rectange take minimum 3 parameters  
+1. Surface on which to draw  
+2. Color in RGB Tuple  
+3. Tuple of (  
+  Start X Position,  
+  Start Y Position,  
+  Width of Rectangle,  
+  Height of Rectangle  
+)  
+4. Optional parameter of Stroke. Default is to fill the rectangle  
+```python
+# Create square with length 50 from position 20, 20 with stroke of 2
+pygame.draw.rect(screen, (255, 0, 0), (20, 20, 50, 50), 2)
+```  
+  
+## Draw Line
+Line need minimum 4 parameters
+1. Surface on which to draw  
+2. Color in RGB Tuple  
+3. Tuple of (  
+    Start X Position,  
+    Start Y Position   
+)  
+4. Tuple of (
+    End X Position,  
+    End Y Position  
+)  
+5. Optional parameter of Stroke. Default is 1.
+```python
+## Draw line from (20, 100) to (20, 150) with stroke 5
+pygame.draw.line(screen, (255, 0, 0), (20, 100), (30, 150), 5)
+```  
+  
+## On Exit clean Closure
+```python
+pygame.quit()
+sys.exit()
+```
