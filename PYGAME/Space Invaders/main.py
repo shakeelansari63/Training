@@ -2,6 +2,7 @@ import pygame
 import random
 import math
 from pygame import mixer
+import sys
 
 
 ## Initialize the Pygame Module
@@ -221,3 +222,7 @@ while run_status:
 
     ## This will keep updating the display window for every changes user make
     pygame.display.update()
+    
+# Exit
+pygame.quit()
+sys.exit()

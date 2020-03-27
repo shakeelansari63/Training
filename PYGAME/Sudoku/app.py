@@ -1,6 +1,7 @@
 import pygame
 import sys
 from settings import *
+from buttons import *
 
 ## Define app class for Sudoku
 class App():
@@ -24,6 +25,20 @@ class App():
 
         ## Set Current State to Playing
         self.state = "PLAYING"
+
+        ## Playing Grid
+        self.playing_grid = test_board_2
+
+        ## Define font for Text
+        self.font_grid = pygame.font.Font('freesansbold.ttf', GRID_NUM_SIZE)
+
+        ## Listing different buttons for different states
+        self.play_buttons = []
+        self.menu_buttons = []
+        self.end_buttons = []
+
+        ## Load the Buttons
+        self.load_buttons()
 
 
     ## Define run method
@@ -56,6 +71,10 @@ class App():
     def playing_update(self):
         self.mouse_pos = pygame.mouse.get_pos()
 
+        ## Update Mouse Position for Playing Buttons
+        for button in self.play_buttons:
+            button.update(self.mouse_pos)
+
 
     ## Defime Draw Method
     def playing_draw(self):
@@ -65,9 +84,16 @@ class App():
 
         ## Draw game ares
         self.draw_grid()
+        
+        ## Draw Playing Buttons
+        for button in self.play_buttons:
+            button.draw(self.screen)
 
         ## Show selected cell
         self.selected_cell_draw()
+
+        ## Draw NUmbers on Grid
+        self.draw_numbers()
 
         ## Update Display
         pygame.display.update()
@@ -123,3 +149,30 @@ class App():
         else:
             self.selected_cell = None
     
+
+    ## Define method for loading buttons
+    def load_buttons(self):
+        self.play_buttons.append(Button(0))
+
+    
+    ## Draw Numbers
+    def draw_numbers(self):
+        for y_idx, row in enumerate(self.playing_grid):
+            for x_idx, value in enumerate(row):
+                x_pos = (x_idx * BOX_LENGTH) + PADD
+                y_pos = (y_idx * BOX_LENGTH) + PADD
+                self.text_on_grid([x_pos, y_pos], str(value) if value != 0 else ' ')
+
+
+    ## Function to display Text on screen
+    def text_on_grid(self, pos, text):
+        text = self.font_grid.render(text, True, BLACK)
+
+        ## Get text dimension for centering the text in cell
+        text_height = text.get_height()
+        text_width = text.get_width()
+
+        ## Get padding for text
+        pos[0] += (BOX_LENGTH - text_width) // 2
+        pos[1] += (BOX_LENGTH - text_height) // 2
+        self.screen.blit(text, pos)
