@@ -103,6 +103,16 @@ Line need minimum 4 parameters
 pygame.draw.line(screen, (255, 0, 0), (20, 100), (30, 150), 5)
 ```  
   
+## Draw Text
+Text need a font attribute to convert it to drawable object
+```python
+## Create Font Attribute
+font_attr = pygame.font.Font('ttffont.ttf', FONT_SIZE_INT)
+text = 'Some Text'
+text_attr = font_attr.render(text, True, (0, 0, 0))
+screen.blit(text_attr, text_position)
+```
+  
 ## On Exit clean Closure
 ```python
 pygame.quit()
