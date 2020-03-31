@@ -99,39 +99,42 @@ class App():
     def get_game_board(self):
 
         ## Connect to Server and fetch content
-        sudoku_site = requests.get(WEBSITE)
+        try:
+            sudoku_site = requests.get(WEBSITE)
 
-        ## If server is connected correctly then parse content
-        if sudoku_site.status_code == 200:
+            ## If server is connected correctly then parse content
+            if sudoku_site.status_code == 200:
 
-            ## Parse content with lxml
-            site_data = BeautifulSoup(sudoku_site.text, features = 'lxml')
+                ## Parse content with lxml
+                site_data = BeautifulSoup(sudoku_site.text, features = 'lxml')
 
-            ## Extract all Java Scripts
-            scripts = "\n".join(str(x) for x in site_data.find_all('script'))
+                ## Extract all Java Scripts
+                scripts = "\n".join(str(x) for x in site_data.find_all('script'))
 
-            ## Extract Array from Java Script
-            unsolved_grid_list = re.compile(RE_FOR_GRID,re.I).findall(scripts)
+                ## Extract Array from Java Script
+                unsolved_grid_list = re.compile(RE_FOR_GRID,re.I).findall(scripts)
 
-            ## If Array is not found, fall back to test grid
-            if len(unsolved_grid_list) == 0:
-                print('Invalid Server Content')
+                ## If Array is not found, fall back to test grid
+                if len(unsolved_grid_list) == 0:
+                    print('Invalid Server Content')
 
-            ## If Array is found, Convert it to Python List
+                ## If Array is found, Convert it to Python List
+                else:
+                    unsolved_grid = list(map(int, unsolved_grid_list[0].split(',')))
+                    unsolved_board = []
+
+                    ## Convert Python 1D 81x1 list to 2D 9x9 grid
+                    for i in range(9):
+                        unsolved_board.append(unsolved_grid[i * 9:i*9 + 9])
+                    
+                    ## Set Playing Board to this 2D board
+                    self.playing_grid = unsolved_board
+            
+            ## If server is not conneted, Use Local Test Grid
             else:
-                unsolved_grid = list(map(int, unsolved_grid_list[0].split(',')))
-                unsolved_board = []
-
-                ## Convert Python 1D 81x1 list to 2D 9x9 grid
-                for i in range(9):
-                    unsolved_board.append(unsolved_grid[i * 9:i*9 + 9])
-                
-                ## Set Playing Board to this 2D board
-                self.playing_grid = unsolved_board
-        
-        ## If server is not conneted, Use Local Test Grid
-        else:
-            print("Cannot Connect to Server")
+                print("Cannot Connect to Server")
+        except:
+            print("Unable to Connect to Server")
 
 ##########################################################################################
 ##################### Core Playing Methods ###############################################
