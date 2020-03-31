@@ -6,6 +6,7 @@ BOX_LENGTH = 80
 PADD = 20
 BUTTON_HEIGHT = 60
 BUTTON_WIDTH = 150
+BUTTON_TEXT_SIZE = 40
 GRID_NUM_SIZE = 50
 
 WIDTH = (BOX_LENGTH * 9) + (2 * PADD)
@@ -36,3 +37,9 @@ BLACK = (0, 0, 0)
 PALE_BLUE = (96, 216, 232)
 DARK_BLUISH = (102, 102, 153)
 LIGHT_BLUISH = (133, 133, 173)
+GRAY = (150, 150, 150)
+PALE_RED = (255, 122, 122)
+
+## Web scraping For Sudoku board
+WEBSITE = 'http://sudoku.com.au/'
+RE_FOR_GRID = r'var\s*iGridUnsolved\s*=\s*new\s*Array\s*\((.*?)\)\s*\;'
