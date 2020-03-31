@@ -14,6 +14,19 @@ class App():
         ## Initialize PyGame
         pygame.init()
 
+        ## Set Caption and Icon for Game
+        pygame.display.set_caption(GAME_NAME)
+
+        ## Set Icon
+        icon = pygame.image.load('sudoku.png')
+        pygame.display.set_icon(icon)
+
+        ## Set Running Variable for Pygame Looop
+        self.running = True
+
+        ## Create PyGame Screen
+        self.screen = pygame.display.set_mode((WIDTH, HEIGHT))
+
         ## Call Reset Function
         self.reset()
 
@@ -36,11 +49,6 @@ class App():
 
     ## Method to reset Game
     def reset(self):
-        ## Set Running Variable for Pygame Looop
-        self.running = True
-
-        ## Create PyGame Screen
-        self.screen = pygame.display.set_mode((WIDTH, HEIGHT))
 
         ## Set Mouse position tracker
         self.mouse_pos = None
