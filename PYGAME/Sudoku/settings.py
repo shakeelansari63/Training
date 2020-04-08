@@ -12,12 +12,14 @@ GRID_NUM_SIZE = 50
 WIDTH = (BOX_LENGTH * 9) + (2 * PADD)
 HEIGHT = (BOX_LENGTH * 9) + (3 * PADD) + BUTTON_HEIGHT
 
-GAME_AREA = {"START-X": PADD, "START-Y": PADD, "END-X": WIDTH - PADD, "END-Y":HEIGHT - ( (2 * PADD) + BUTTON_HEIGHT)}
+GAME_AREA = {"START-X": PADD, "START-Y": PADD, "END-X": WIDTH -
+             PADD, "END-Y": HEIGHT - ((2 * PADD) + BUTTON_HEIGHT)}
 
-BUTTON_AREA = {"START-X": PADD, "START-Y": GAME_AREA["END-Y"] + PADD, "END-X": WIDTH - PADD, "END-Y": HEIGHT - PADD}
+BUTTON_AREA = {"START-X": PADD,
+               "START-Y": GAME_AREA["END-Y"] + PADD, "END-X": WIDTH - PADD, "END-Y": HEIGHT - PADD}
 
-## Grid
-test_grid = [ [ 0 for _ in range(9) ] for _ in range(9) ]
+# Grid
+test_grid = [[0 for _ in range(9)] for _ in range(9)]
 
 test_board_2 = [
     [0, 6, 0, 2, 0, 0, 8, 3, 1],
@@ -31,7 +33,7 @@ test_board_2 = [
     [0, 0, 0, 0, 7, 0, 0, 1, 5],
 ]
 
-## Colors Definition
+# Colors Definition
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 PALE_BLUE = (96, 216, 232)
@@ -40,6 +42,6 @@ LIGHT_BLUISH = (133, 133, 173)
 GRAY = (150, 150, 150)
 PALE_RED = (255, 122, 122)
 
-## Web scraping For Sudoku board
+# Web scraping For Sudoku board
 WEBSITE = 'http://sudoku.com.au/'
 RE_FOR_GRID = r'var\s*iGridUnsolved\s*=\s*new\s*Array\s*\((.*?)\)\s*\;'
