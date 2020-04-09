@@ -1,12 +1,11 @@
 import pygame
 import sys
 from settings import *
-from buttons import *
+from buttons import Button
 import requests
 from bs4 import BeautifulSoup
 import re
 import time
-
 # Define app class for Sudoku
 
 
@@ -120,10 +119,12 @@ class App():
                 site_data = BeautifulSoup(sudoku_site.text, features='lxml')
 
                 # Extract all Java Scripts
-                scripts = "\n".join(str(x) for x in site_data.find_all('script'))
+                scripts = "\n".join(str(x)
+                                    for x in site_data.find_all('script'))
 
                 # Extract Array from Java Script
-                unsolved_grid_list = re.compile(RE_FOR_GRID, re.I).findall(scripts)
+                unsolved_grid_list = re.compile(
+                    RE_FOR_GRID, re.I).findall(scripts)
 
                 # If Array is not found, fall back to test grid
                 if len(unsolved_grid_list) == 0:
@@ -131,7 +132,8 @@ class App():
 
                 # If Array is found, Convert it to Python List
                 else:
-                    unsolved_grid = list(map(int, unsolved_grid_list[0].split(',')))
+                    unsolved_grid = list(
+                        map(int, unsolved_grid_list[0].split(',')))
                     unsolved_board = []
 
                     # Convert Python 1D 81x1 list to 2D 9x9 grid
@@ -176,7 +178,8 @@ class App():
 
                 # If delete key is pressed on selected cell, then delete cell content
                 elif event.key == pygame.K_DELETE and self.selected_cell is not None:
-                    self.playing_grid[self.selected_cell[1]][self.selected_cell[0]] = 0
+                    self.playing_grid[self.selected_cell[1]
+                                      ][self.selected_cell[0]] = 0
 
                     # Se Cell changed attribute
                     self.cell_changed = True
@@ -300,7 +303,8 @@ class App():
                 for i in range(3):
                     for j in range(3):
                         if self.playing_grid[pos_x + i][pos_y + j] != 0:
-                            non_zero_grid.append(self.playing_grid[pos_x + i][pos_y + j])
+                            non_zero_grid.append(
+                                self.playing_grid[pos_x + i][pos_y + j])
 
                 # Chech for duplicates in the Flattened list
                 if len(non_zero_grid) != len(set(non_zero_grid)):
@@ -335,14 +339,18 @@ class App():
 
             # Draw Internal Horizontal Lines
             pygame.draw.line(self.screen, BLACK,
-                             (GAME_AREA["START-X"], GAME_AREA["START-Y"] + (x * BOX_LENGTH)),
-                             (GAME_AREA["END-X"], GAME_AREA["START-Y"] + (x * BOX_LENGTH)),
+                             (GAME_AREA["START-X"],
+                              GAME_AREA["START-Y"] + (x * BOX_LENGTH)),
+                             (GAME_AREA["END-X"],
+                              GAME_AREA["START-Y"] + (x * BOX_LENGTH)),
                              stroke)
 
             # Draw Internal Vrtical Lines
             pygame.draw.line(self.screen, BLACK,
-                             (GAME_AREA["START-X"] + (x * BOX_LENGTH), GAME_AREA["START-Y"]),
-                             (GAME_AREA["START-X"] + (x * BOX_LENGTH), GAME_AREA["END-Y"]),
+                             (GAME_AREA["START-X"] +
+                              (x * BOX_LENGTH), GAME_AREA["START-Y"]),
+                             (GAME_AREA["START-X"] +
+                              (x * BOX_LENGTH), GAME_AREA["END-Y"]),
                              stroke)
 
     # Method to draw selected cell
@@ -386,7 +394,8 @@ class App():
             for x_idx, value in enumerate(row):
                 x_pos = (x_idx * BOX_LENGTH) + PADD
                 y_pos = (y_idx * BOX_LENGTH) + PADD
-                self.text_on_grid([x_pos, y_pos], str(value) if value != 0 else ' ')
+                self.text_on_grid([x_pos, y_pos], str(value)
+                                  if value != 0 else ' ')
 
     # Function to display Text on screen
 
@@ -420,7 +429,8 @@ class App():
         for row_idx, col_idx in self.locked_cells:
             pos_x = row_idx * BOX_LENGTH + PADD
             pos_y = col_idx * BOX_LENGTH + PADD
-            pygame.draw.rect(self.screen, GRAY, (pos_x, pos_y, BOX_LENGTH, BOX_LENGTH))
+            pygame.draw.rect(self.screen, GRAY,
+                             (pos_x, pos_y, BOX_LENGTH, BOX_LENGTH))
 
     # Function to shade Incorrect Cells
 
@@ -432,54 +442,55 @@ class App():
                 BOX_LENGTH,
                 BOX_LENGTH
             ))
-    ## Function to Solve Grid
+    # Function to Solve Grid
+
     def solver(self):
         self.not_solved = True
-        ## Y Co-ordinates
+        # Y Co-ordinates
         for pos_y in range(9):
-            ## X Co-ordinates
+            # X Co-ordinates
             for pos_x in range(9):
-                ## Check if value is missing
+                # Check if value is missing
                 if self.playing_grid[pos_y][pos_x] == 0:
-                    ## Loop values to check correct val
+                    # Loop values to check correct val
                     for val in range(1, 10):
                         if self.is_correct_value(pos_y, pos_x, val):
-                            ## Put the value
+                            # Put the value
                             self.playing_grid[pos_y][pos_x] = val
 
-                            ## Testing with time
+                            # Testing with time
                             time.sleep(0.01)
 
                             # Recursive update
                             self.solver()
 
-                            ## Testing with time
+                            # Testing with time
                             time.sleep(0.01)
 
-                            ## If any incorrect value found, then set grid to 0
+                            # If any incorrect value found, then set grid to 0
                             if self.not_solved:
                                 self.playing_grid[pos_y][pos_x] = 0
-                    
-                    ## If all values are exhausted, return to previous position
-                    ## This is necessary to return reursive function to avoid infinite looping
+
+                    # If all values are exhausted, return to previous position
+                    # This is necessary to return reursive function to avoid infinite looping
                     return
-        ## Unset not Solved variable to avoid resetting all values to 0
+        # Unset not Solved variable to avoid resetting all values to 0
         self.not_solved = False
 
+    # Helper function for Solver
 
-    ## Helper function for Solver 
     def is_correct_value(self, y, x, val):
         ## Check in Row
         for pos_x in range(9):
             if self.playing_grid[y][pos_x] == val:
                 return False
-        
+
         ## Check in Column
         for pos_y in range(9):
             if self.playing_grid[pos_y][x] == val:
                 return False
-        
-        ## Check in small Grid
+
+        # Check in small Grid
         start_x = (x // 3) * 3
         start_y = (y // 3) * 3
         for posy in range(3):
@@ -488,6 +499,6 @@ class App():
                 pos_x = start_x + posx
                 if self.playing_grid[pos_y][pos_x] == val:
                     return False
-        
-        ## If possible, return True
+
+        # If possible, return True
         return True
