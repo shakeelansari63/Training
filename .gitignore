@@ -2,6 +2,7 @@
 */venv/
 */__pycache__/
 */.vscode
+*/.atom
 
 # Python Notebook
 **/.ipynb_checkpoints
