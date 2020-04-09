@@ -5,6 +5,7 @@ from buttons import *
 import requests
 from bs4 import BeautifulSoup
 import re
+import time
 
 # Define app class for Sudoku
 
@@ -28,6 +29,12 @@ class App():
 
         # Create PyGame Screen
         self.screen = pygame.display.set_mode((WIDTH, HEIGHT))
+
+        # Set initialization Grid to local Test GRID_NUM_SIZE
+        self.init_grid = test_board_2
+
+        # Pull Sudoku from web
+        self.get_game_board()
 
         # Call Reset Function
         self.reset()
@@ -64,8 +71,10 @@ class App():
         # Set Current State to Playing
         self.state = "PLAYING"
 
-        # Playing Grid
-        self.playing_grid = test_board_2
+        # Populate Playing Grid Playing Grid
+        self.playing_grid = []
+        for row in self.init_grid:
+            self.playing_grid.append(row.copy())
 
         # Define font for Text
         self.font_grid = pygame.font.Font('freesansbold.ttf', GRID_NUM_SIZE)
@@ -130,7 +139,7 @@ class App():
                         unsolved_board.append(unsolved_grid[i * 9:i*9 + 9])
 
                     # Set Playing Board to this 2D board
-                    self.playing_grid = unsolved_board
+                    self.init_grid = tuple(unsolved_board)
 
             # If server is not conneted, Use Local Test Grid
             else:
@@ -368,6 +377,7 @@ class App():
     # Define method for loading buttons
     def load_buttons(self):
         self.play_buttons.append(Button(0, text='Reset', func=self.reset))
+        self.play_buttons.append(Button(1, text='Solve', func=self.solver))
 
     # Draw Numbers
 
@@ -395,9 +405,6 @@ class App():
     # Load buttons
 
     def load(self):
-        # Pull Sudoku from web
-        self.get_game_board()
-
         # Load Buttons
         self.load_buttons()
 
@@ -425,3 +432,62 @@ class App():
                 BOX_LENGTH,
                 BOX_LENGTH
             ))
+    ## Function to Solve Grid
+    def solver(self):
+        self.not_solved = True
+        ## Y Co-ordinates
+        for pos_y in range(9):
+            ## X Co-ordinates
+            for pos_x in range(9):
+                ## Check if value is missing
+                if self.playing_grid[pos_y][pos_x] == 0:
+                    ## Loop values to check correct val
+                    for val in range(1, 10):
+                        if self.is_correct_value(pos_y, pos_x, val):
+                            ## Put the value
+                            self.playing_grid[pos_y][pos_x] = val
+
+                            ## Testing with time
+                            time.sleep(0.01)
+
+                            # Recursive update
+                            self.solver()
+
+                            ## Testing with time
+                            time.sleep(0.01)
+
+                            ## If any incorrect value found, then set grid to 0
+                            if self.not_solved:
+                                self.playing_grid[pos_y][pos_x] = 0
+                    
+                    ## If all values are exhausted, return to previous position
+                    ## This is necessary to return reursive function to avoid infinite looping
+                    return
+        ## Unset not Solved variable to avoid resetting all values to 0
+        self.not_solved = False
+
+
+    ## Helper function for Solver 
+    def is_correct_value(self, y, x, val):
+        ## Check in Row
+        for pos_x in range(9):
+            if self.playing_grid[y][pos_x] == val:
+                return False
+        
+        ## Check in Column
+        for pos_y in range(9):
+            if self.playing_grid[pos_y][x] == val:
+                return False
+        
+        ## Check in small Grid
+        start_x = (x // 3) * 3
+        start_y = (y // 3) * 3
+        for posy in range(3):
+            for posx in range(3):
+                pos_y = start_y + posy
+                pos_x = start_x + posx
+                if self.playing_grid[pos_y][pos_x] == val:
+                    return False
+        
+        ## If possible, return True
+        return True

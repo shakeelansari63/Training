@@ -1,5 +1,6 @@
 import pygame
 from settings import *
+import threading
 
 
 class Button:
@@ -61,4 +62,5 @@ class Button:
         return self.highlighted
 
     def exec_function(self):
-        self.func()
+        th = threading.Thread(target=self.func)
+        th.start()
