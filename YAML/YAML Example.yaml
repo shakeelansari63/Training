@@ -1,0 +1,26 @@
+# YAML - Yaml Ain't Markup Language
+# Comment in Yaml  with #
+
+# Object with Members
+Person:
+    # String Data
+    name: "My Name"
+    
+    # Integar Type
+    age: 29
+    
+    # Float Type
+    gpa: 4.5
+    
+    # Boolean type
+    is_male: true
+    
+    # List
+    Friends:
+        - "Friend1"
+        - "Friend2"
+        - "Friend3"
+        
+    # Named List
+    
+    
