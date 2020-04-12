@@ -250,6 +250,7 @@ class App():
 ########################### Board Methods ################################################
 ##########################################################################################
 
+
     def check_all_done(self):
         # Loop over playing grid to check 0 values
         for posy in range(9):
@@ -324,7 +325,6 @@ class App():
 ##########################################################################################
 
     # Draw Grid Method
-
 
     def draw_grid(self):
         # Draw Outside of Grid Dimensions in (x, y, width, height) form
