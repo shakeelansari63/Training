@@ -5,6 +5,9 @@ from PyQt5.QtCore import Qt
 
 class HelloWindow(QMainWindow):
     def __init__(self, *args, **kwargs):
+        # Create app
+        self.app = QApplication(sys.argv)
+        
         # Initialize the Super class
         super().__init__(*args, **kwargs)
 
@@ -22,8 +25,6 @@ class HelloWindow(QMainWindow):
 
 
 if __name__ == '__main__':
-    # Create app
-    app = QApplication(sys.argv)
 
     # Create Window
     win = HelloWindow()
@@ -32,4 +33,4 @@ if __name__ == '__main__':
     win.show()
 
     # Execute App
-    app.exec_()
+    win.app.exec_()
