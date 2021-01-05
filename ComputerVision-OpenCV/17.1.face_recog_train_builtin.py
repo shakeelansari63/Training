@@ -59,7 +59,7 @@ def train_face_recog(base_path):
 
 if __name__ == '__main__':
     # read directories of pictures and build list of celebs
-    base_dir = os.path.abspath('celebs/')
+    base_dir = os.path.abspath('train_celebs/')
 
     # Train face recognition model
     trained_model, features, labels = train_face_recog(base_dir)
