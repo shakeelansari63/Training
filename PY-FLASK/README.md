@@ -23,3 +23,8 @@ export FLASK_DEBUG=1
 # Run Flask app
 flask run
 ```
+
+### For JWT token in API, install PyJWT
+```
+pip install pyjwt
+```
