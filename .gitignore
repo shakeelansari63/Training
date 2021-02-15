@@ -83,3 +83,7 @@ FLUTTER//build/
 
 # CPP Output File
 **/a.out
+
+# Output Binary Files
+*.o
+*.O
