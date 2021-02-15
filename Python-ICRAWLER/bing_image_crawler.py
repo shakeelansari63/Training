@@ -1,9 +1,8 @@
 from icrawler.builtin import BingImageCrawler
 
-celebs = ['Shahrukh Khan', 'Rashmika Mandanna', 'Kiara Advani',
-          'Varun Dhavan', 'Rajkumar Rao', 'Ayushman Khurana']
+celebs = ['Desert', 'Jungle', 'Sea', 'Ocean', 'Humans']
 
-numbers = 30
+numbers = 1000
 
 for celeb in celebs:
     bing_crawler = BingImageCrawler(
