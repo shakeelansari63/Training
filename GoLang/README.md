@@ -24,6 +24,11 @@ Projects
 go run [programname].go
 ```  
   
+## See data usage in go application and go routines
+```
+go run -race [programname].go
+```  
+  
 ## Compiling build/project
 ```
 go build github.com/[username]/[projectname]
