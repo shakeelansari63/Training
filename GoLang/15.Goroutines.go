@@ -106,7 +106,7 @@ func main() {
 
 	// We can set maxprocs
 	runtime.GOMAXPROCS(20)
-	fmt.Printf("Maximum threads by updated: %v\n", runtime.GOMAXPROCS(-1))
+	fmt.Printf("Maximum threads updated: %v\n", runtime.GOMAXPROCS(-1))
 }
 
 func sayHello() {
