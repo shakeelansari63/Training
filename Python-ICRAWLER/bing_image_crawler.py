@@ -1,8 +1,8 @@
 from icrawler.builtin import BingImageCrawler
 
-celebs = ['Desert', 'Jungle', 'Sea', 'Ocean', 'Humans']
+celebs = ['Aeroplane']
 
-numbers = 1000
+numbers = 500
 
 for celeb in celebs:
     bing_crawler = BingImageCrawler(
