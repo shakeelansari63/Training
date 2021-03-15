@@ -1,4 +1,4 @@
-# mytest
+# Flutter App
 
 A new Flutter project.
 
@@ -14,3 +14,20 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our 
 [online documentation](https://flutter.dev/docs), which offers tutorials, 
 samples, guidance on mobile development, and a full API reference.
+
+## Flutter Commands
+### Check Flutter installation and dependencies are correct
+```
+flutter doctor
+```
+  
+### Create Flutter Project
+```
+flutter create Project_Name
+```
+Note: The project name should be one word seperated by "_"(underscores), spaces or dashes are not allowed.
+  
+### Run Flutter App
+```
+flutter run
+```
