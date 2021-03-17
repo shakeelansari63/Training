@@ -26,6 +26,17 @@ class Person {
   }
 }
 
+class Animal {
+  int legs = 0;
+  Animal.mammal() {
+    this.legs = 4;
+  }
+
+  Animal.bird() {
+    this.legs = 2;
+  }
+}
+
 void main() {
   var p1 = Person('Mark', 30);
   print(p1.name);
@@ -34,4 +45,9 @@ void main() {
   print(p1.name);
   p1.setParm(age: 21);
   print(p1.age);
+
+  var a1 = Animal.bird();
+  print(a1.legs);
+  var a2 = Animal.mammal();
+  print(a2.legs);
 }

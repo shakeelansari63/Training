@@ -30,4 +30,8 @@ Note: The project name should be one word seperated by "_"(underscores), spaces 
 ### Run Flutter App
 ```
 flutter run
-```
+```  
+  
+### Stateless vs Stateful Widgets
+Stateless widgets can get data from external source and render the UI. But once the ui is rendered, they do not change. 
+Stateful widgets can also get data from external sources, but they can also have internal state. And if external data change or internal state change, the stateful widget re-renders the ui. 
