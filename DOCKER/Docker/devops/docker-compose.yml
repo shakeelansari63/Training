@@ -1,0 +1,21 @@
+version: "3"
+services: 
+    mongodb:
+        image: mongo
+        container_name: mongo
+        ports: 
+            - 27017
+        hostname: mongo
+        volumes: 
+            - $HOME/mongodb/data/db:/data/db
+    cardsapp:
+        build: 
+            context: ../../
+            dockerfile: ./Docker/devops/Dockerfile
+        image: cardsapp
+        container_name: cardsapp
+        ports: 
+            - 8080:8080
+        hostname: cardsapp
+        links: 
+            - mongodb:mongo

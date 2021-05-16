@@ -1,0 +1,4 @@
+com/ibm/demo/services/impl/CreateCardTransactionTest.class
+com/ibm/demo/services/impl/GetCardAccountEnquiryTest.class
+com/ibm/demo/services/impl/GetCustomerCardDetailsTest.class
+com/ibm/demo/services/impl/UpdateDirectDebitsTest.class

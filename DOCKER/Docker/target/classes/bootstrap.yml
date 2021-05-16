@@ -1,0 +1,29 @@
+management: 
+  endpoint: 
+    metrics: 
+      enabled: true
+    prometheus: 
+      enabled: true
+  endpoints: 
+    web: 
+      exposure: 
+        include: "*"
+  metrics: 
+    export: 
+      prometheus: 
+        enabled: true
+spring: 
+  application: 
+    name: cardsappspring
+  cloud: 
+    config: 
+      failFast: true
+      name: cardsappspring, environment
+      retry: 
+        maxAttempts: 20
+      uri: ${CONFIG_SERVER_URI}
+  profiles: 
+    active: ${PROFILE}
+  sleuth: 
+    sampler: 
+      percentage: 1
