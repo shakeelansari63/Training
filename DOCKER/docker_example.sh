@@ -5,10 +5,10 @@ mvn clean -f ./Docker/pom.xml
 mvn package -f ./Docker/pom.xml
 
 # Build Docker Image
-docker build -f ./Docker/devops/Dockerfile -t cardsapp .
+docker build -f ./Docker/devops/Dockerfile -t helloapp .
 
 # Run the Docker Container in background
-docker_id=`docker run -d cardsapp`
+docker_id=`docker run -d helloapp`
 
 echo 'CardsApp docker running with Docker ID ; '${docker_id}
 
@@ -26,7 +26,7 @@ docker stop ${docker_id}
 docker rm ${docker_id}
 
 # Remove Docker Image 
-docker rmi cardsapp
+docker rmi helloapp
 
 # Build and Run Docker from Docker Compose
 docker-compose -f ./Docker/devops/docker-compose.yml up -d

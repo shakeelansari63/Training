@@ -8,14 +8,14 @@ services:
         hostname: mongo
         volumes: 
             - $HOME/mongodb/data/db:/data/db
-    cardsapp:
+    helloapp:
         build: 
             context: ../../
             dockerfile: ./Docker/devops/Dockerfile
-        image: cardsapp
-        container_name: cardsapp
+        image: helloapp
+        container_name: helloapp
         ports: 
             - 8080:8080
-        hostname: cardsapp
+        hostname: helloapp
         links: 
             - mongodb:mongo
