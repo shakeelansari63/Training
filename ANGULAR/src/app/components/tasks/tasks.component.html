@@ -1,0 +1,4 @@
+<!-- ngFor directive can be used to loop over some list and generate componets-->
+<!-- In order to pass the object, we can put it in [] like [task] and that will be passed as JS object-->
+<app-task-item *ngFor="let task of tasks" [task_itm]="task">
+</app-task-item>

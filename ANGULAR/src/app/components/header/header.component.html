@@ -1,0 +1,8 @@
+<header>
+    <!-- Title comes from header componets class-->
+    <h2 > {{ title }} </h2>
+
+    <!-- Button comes from Button Componet class and it is embedded via app-button (app-<componet name>) tag-->
+    <!-- btnClick is an event defined in button components. And it is emited by clikcin the button-->
+    <app-button text='Add' color='green' (btnClick) = "toggleAddTask()"></app-button>
+</header>

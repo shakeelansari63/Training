@@ -1,0 +1,7 @@
+<!-- We create button element with text which is coming as input from app-->
+<!-- In order to use inline style elements, you have to use ngStyle Directive-->
+
+<!-- Click event is predefined and will emit which can be captured and used to do something-->
+<button class="btn" [ngStyle]="{'background-color': color}" (click)="onClick()">
+    {{ text }}
+</button>
