@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-// Lets import Task model and mock tasks
+// Lets import Task model and Service for reading tasks
 import { Task } from '../../Task'
-import { TASKS } from '../../mock-tasks'
+import { TasksService } from '../../services/tasks.service'
 
 @Component({
   selector: 'app-tasks',
@@ -11,13 +11,19 @@ import { TASKS } from '../../mock-tasks'
 })
 export class TasksComponent implements OnInit {
 
-  // Lets read all tasks from Mock tasks
-  // Then these tasks can be used in tasks.componnets
-  tasks: Task[] = TASKS;
+  // Initialise tasks to empty list. And we will populate it later
+  tasks: Task[] = [];
 
-  constructor() { }
+  // In order to use Server, it need to be added to Constructor
+  constructor(private taskService: TasksService) { }
 
+  // Populate the tasks in onInit method because that runs on component initialization
   ngOnInit(): void {
+    // If a method is returning Observable, we have to subscribe to observable
+    // And Observable Subscription take function input which tells what to do if Observable push data.
+    this.taskService.getTasks().subscribe((tasks) => {
+      this.tasks = tasks;
+    });
   }
 
 }
