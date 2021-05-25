@@ -1,6 +1,6 @@
 <!-- Format the Tasks-->
 <div class="task">
     <!-- Font Awesome Icons are used with fa-icon tag-->
-    <h3>{{ task_itm.text }} <fa-icon [icon]="faTimes" [ngStyle]="{'color': 'red'}"></fa-icon></h3>
+    <h3>{{ task_itm.text }} <fa-icon [icon]="faTimes" [ngStyle]="{'color': 'red'}" (click)="deleteTask()"></fa-icon></h3>
     <p>{{ task_itm.day }}</p>
 </div>
