@@ -13,7 +13,13 @@ import { TmplAstElement } from '@angular/compiler';
 })
 export class TasksService {
   // Api URL
-  private apiURL = 'http://localhost:5000/tasks'
+  private apiURL = 'http://localhost:5000/tasks';
+
+  private hdr = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  }
 
   // And we have to add http client in constructor to us it
   constructor(private httpCl: HttpClient) { }
@@ -41,5 +47,13 @@ export class TasksService {
 
     // Call Delete method to delete the Item and return 1 task 
     return this.httpCl.delete<Task>(delUrl);
+  }
+
+  // Servcie to Toggle Reminder on Task
+  toggleReminder(task: Task): Observable<Task> {
+    const updUrl = `${this.apiURL}/${task.id}`;
+
+    // Update the Task as current Task
+    return this.httpCl.put<Task>(updUrl, task, this.hdr);
   }
 }

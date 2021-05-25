@@ -16,6 +16,7 @@ export class TaskItemComponent implements OnInit {
   //Define Task Property
   @Input() task_itm: Task;
   @Output() onDeleteTask = new EventEmitter();
+  @Output() onToggleTask = new EventEmitter();
 
   // Set the Icon property and now this property can be used in html
   faTimes = faTimes;
@@ -29,6 +30,12 @@ export class TaskItemComponent implements OnInit {
     this.onDeleteTask.emit(this.task_itm);
     // Log 
     console.log("Deleting Task: " + this.task_itm.id);
+  }
+
+  onToggle() {
+    this.onToggleTask.emit(this.task_itm);
+    // Log
+    console.log("Change reminder for " + this.task_itm.id);
   }
 
 }

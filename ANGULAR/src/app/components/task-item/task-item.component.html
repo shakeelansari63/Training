@@ -1,5 +1,6 @@
 <!-- Format the Tasks-->
-<div class="task">
+<!-- Using ngClass we can set some class for object is some condition is true -->
+<div class="task" [ngClass]="{ reminder : task_itm.reminder }" (dblclick)="onToggle()">
     <!-- Font Awesome Icons are used with fa-icon tag-->
     <h3>{{ task_itm.text }} <fa-icon [icon]="faTimes" [ngStyle]="{'color': 'red'}" (click)="deleteTask()"></fa-icon></h3>
     <p>{{ task_itm.day }}</p>
