@@ -45,3 +45,27 @@ ng add @fortawesome/angular-fontawesome
 ```
   
 #### In order to use Font Awesome, we need to add it to App.module and import it
+  
+## Useful Ng Directives
+Directives in () are Output Directives whereas that in [] are input Directives. For 2 way Linking use [()] directives.  
+  
+### (click) 
+Action on Object is clicked
+  
+### (dblclick)
+Action when object is double clicked
+  
+### [ngStyle]
+Provide inline CSS Styling for object
+  
+### [ngClass]
+Specify class for an object on specific condition
+  
+### *ngFor
+Duplicate object for the list of objects
+  
+### (ngSubmit)
+Action on Form Submit
+  
+### [(ngModel)]
+Two way linking HTML inut object with Class property. When using ngModel make sure input object has name parameter which matches the name of property in class.
