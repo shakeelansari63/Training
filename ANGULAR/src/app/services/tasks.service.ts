@@ -56,4 +56,8 @@ export class TasksService {
     // Update the Task as current Task
     return this.httpCl.put<Task>(updUrl, task, this.hdr);
   }
+
+  taskAdd(task: Task): Observable<Task> {
+    return this.httpCl.post<Task>(this.apiURL, task, this.hdr);
+  }
 }

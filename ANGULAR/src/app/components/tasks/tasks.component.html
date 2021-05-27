@@ -1,3 +1,6 @@
+<!-- We add New Task form in tasks so that we can control it via Task Services-->
+<app-add-task (onTaskAdd)="addTask($event)"></app-add-task>
+
 <!-- ngFor directive can be used to loop over some list and generate componets-->
 <!-- In order to pass the object, we can put it in [] like [task] and that will be passed as JS object-->
 <app-task-item 
