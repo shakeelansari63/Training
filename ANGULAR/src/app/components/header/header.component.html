@@ -4,5 +4,9 @@
 
     <!-- Button comes from Button Componet class and it is embedded via app-button (app-<componet name>) tag-->
     <!-- btnClick is an event defined in button components. And it is emited by clikcin the button-->
-    <app-button text='Add' color='green' (btnClick) = "toggleAddTask()"></app-button>
+    <app-button 
+        text="{{ newTaskActive ?  'Close' : 'Add'}}" 
+        color="{{ newTaskActive ? 'red' : 'green' }}" 
+        (btnClick) = "toggleAddTask()">
+    </app-button>
 </header>

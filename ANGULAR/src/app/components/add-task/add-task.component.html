@@ -1,7 +1,7 @@
 <!-- mgModel defines 2 way data binding between Form input and Class property -->
 <!-- ngSubmit calls a method when form is submit and it override the default submit behaviour
     , so no need to disable it-->
-<form class='add-form' (ngSubmit)="onSubmit()">
+<form *ngIf="displayForm" class='add-form' (ngSubmit)="onSubmit()">
     <div class="form-control">
         <label for="text">Task</label>
         <input type="text" name="text" [(ngModel)]="text" id="text" placeholder="Add Task"/>
