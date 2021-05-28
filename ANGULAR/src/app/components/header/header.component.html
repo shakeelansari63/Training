@@ -5,6 +5,7 @@
     <!-- Button comes from Button Componet class and it is embedded via app-button (app-<componet name>) tag-->
     <!-- btnClick is an event defined in button components. And it is emited by clikcin the button-->
     <app-button 
+        *ngIf="routeMatch('/')"
         text="{{ newTaskActive ?  'Close' : 'Add'}}" 
         color="{{ newTaskActive ? 'red' : 'green' }}" 
         (btnClick) = "toggleAddTask()">
