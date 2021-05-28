@@ -64,6 +64,9 @@ Specify class for an object on specific condition
 ### *ngFor
 Duplicate object for the list of objects
   
+### *ngIf
+Displat the component only if condition is True
+  
 ### (ngSubmit)
 Action on Form Submit
   
