@@ -89,3 +89,12 @@ Project
 ```
 npm install react-icons
 ```
+  
+## Build Production Code
+```
+npm run build
+```
+This will create build folder which can be moved to production and served using 
+```
+server -s build -p <port number>
+```
