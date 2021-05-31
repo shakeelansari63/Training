@@ -2,6 +2,11 @@
 import Header from './components/Header'
 import Tasks from './components/Tasks'
 import AddTask from './components/AddTask'
+import Footer from './components/Footer'
+import About from './components/About'
+
+// Import Browser Router and Routes from React-Router-DOM
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 // Import useStates & useEffect to load something in beginning
 import { useState, useEffect } from 'react'
@@ -116,7 +121,7 @@ function App() {
   }
 
   return (
-    <>
+    <Router>
       <div className='container' style={{ backgroundColor: 'red', color: 'white' }} >
         <h1>React Crash Course</h1>
       </div>
@@ -126,17 +131,24 @@ function App() {
         {/* <h1>Hello From React</h1> 
       Lets Put the Header tag to call Header object*/}
         <Header formViewToggle={() => setFormView(!formView)} curFormView={formView} />
+        {/** Router for Home page which has task form and task list */}
+        <Route path='/' exact render={() => (
+          <>
+            {/**Display Add Task Form only if FormView is true */}
+            {formView && <AddTask onAdd={createTask} />}
 
-        {/**Display Add Task Form only if FormView is true */}
-        {formView && <AddTask onAdd={createTask} />}
-
-        {/** Display tasks */}
-        {tasks.length > 0 ?
-          <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} /> :
-          <p>No Tasks to show</p>
-        }
+            {/** Display tasks */}
+            {tasks.length > 0 ?
+              <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} /> :
+              <p>No Tasks to show</p>
+            }
+          </>
+        )} />
+        {/** Router fo About */}
+        <Route path='/about' component={About} />
       </div>
-    </>
+      <Footer />
+    </Router>
   );
 }
 

@@ -98,3 +98,9 @@ This will create build folder which can be moved to production and served using
 ```
 server -s build -p <port number>
 ```
+  
+## Routing  
+To use routing, install React-Router-DOM library
+```
+npm i react-router-dom
+```
