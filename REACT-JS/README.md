@@ -84,3 +84,8 @@ Project
       |_ index.js
       |_ package.json
 ```
+  
+## Install react-icons for using icons in Project
+```
+npm install react-icons
+```
