@@ -32,6 +32,24 @@ function App() {
     ]
   )
 
+  const deleteTask = (taskId) => {
+    console.log(taskId + ' Deleted !!')
+
+    // To Delete the task, we have to use SetTask state
+    const newTask = tasks.filter((task) => task.id !== taskId)
+    setTasks(newTask)
+  }
+
+  const toggleReminder = (taskId) => {
+    console.log(taskId + ' reminder updated !!')
+
+    // To update reminder, we have to create new task
+    const newTask = tasks.map((task) =>
+      task.id === taskId ? { ...task, reminder: !task.reminder } : task
+    )
+    setTasks(newTask)
+  }
+
   return (
     <div className="container">
       {/* This is JSX object and it does not support either JS or HTML comments
@@ -41,7 +59,10 @@ function App() {
       <Header />
 
       {/** Display tasks */}
-      <Tasks key={tasks.id} tasks={tasks} />
+      { tasks.length > 0 ?
+        <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} /> :
+        <p>No Tasks to show</p>
+      }
     </div>
   );
 }
