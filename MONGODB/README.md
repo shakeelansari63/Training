@@ -193,7 +193,7 @@ db.collectionname.update({
 ```
   
 #### Rename a filed
-User $rename to rename a field name
+Use $rename to rename a field name
 ```
 db.collectionname.update({
      field : 'filter value'
@@ -228,6 +228,11 @@ you can create index on text field as follow
 db.collectionname.createIndex({ fieldname: 'text' })
 ```
   
+### List indexes
+```
+db.collectionname.getIndexes()
+```
+  
 ### Searching / Filter on Index
 You can do partial search in indexed fileds using $text and $search operators
 ```
@@ -238,11 +243,38 @@ db.collectionname.find({
 })
 ```
   
-You can also use $gt for greater than, $gte for greater than and equal, $lt for less than and $lte for less than and equals searches
+$gt - Greater Than
+$lt - Less Than
+$gte - Greater Than or Equals to
+$lte - Less Than or Equals to
+$eq - Equals To
+$ne - Not Equals to
+$in - IN List
+$nin - Not in List
 ```
 db.collectionname.find({
     fieldname : { $gt : somenumber }
 })
+```  
+  
+## Push or Pull from List Field
+To push an object in List or pull object from list, use $push or $pull operations
+```
+db.collectionname.update(
+    {fieldname: 'searchvalue'},
+    {
+        $pull: {
+            listFieldName: 'value to pull'
+        }
+    }
+)
+``` 
+  
+## Capped Collections
+Capped collections are collections where size and number of documents is limited  
+Create capped collection as follow
+```
+db.createCollection('collectionname', {capped: true, size: size_in_bytes, max: max_documents})
 ```
   
 # Thanks to courses
