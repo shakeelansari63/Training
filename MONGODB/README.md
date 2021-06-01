@@ -243,14 +243,14 @@ db.collectionname.find({
 })
 ```
   
-$gt - Greater Than
-$lt - Less Than
-$gte - Greater Than or Equals to
-$lte - Less Than or Equals to
-$eq - Equals To
-$ne - Not Equals to
-$in - IN List
-$nin - Not in List
+$gt - Greater Than  
+$lt - Less Than  
+$gte - Greater Than or Equals to  
+$lte - Less Than or Equals to  
+$eq - Equals To  
+$ne - Not Equals to  
+$in - IN List  
+$nin - Not in List  
 ```
 db.collectionname.find({
     fieldname : { $gt : somenumber }
