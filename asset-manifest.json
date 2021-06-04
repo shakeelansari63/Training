@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/cowin-slot-finder/static/css/main.2bc7357d.chunk.css",
-    "main.js": "/cowin-slot-finder/static/js/main.203c601d.chunk.js",
-    "main.js.map": "/cowin-slot-finder/static/js/main.203c601d.chunk.js.map",
-    "runtime-main.js": "/cowin-slot-finder/static/js/runtime-main.2d40b6f9.js",
-    "runtime-main.js.map": "/cowin-slot-finder/static/js/runtime-main.2d40b6f9.js.map",
-    "static/js/2.ea904bfc.chunk.js": "/cowin-slot-finder/static/js/2.ea904bfc.chunk.js",
-    "static/js/2.ea904bfc.chunk.js.map": "/cowin-slot-finder/static/js/2.ea904bfc.chunk.js.map",
-    "static/js/3.81b918cb.chunk.js": "/cowin-slot-finder/static/js/3.81b918cb.chunk.js",
-    "static/js/3.81b918cb.chunk.js.map": "/cowin-slot-finder/static/js/3.81b918cb.chunk.js.map",
-    "index.html": "/cowin-slot-finder/index.html",
-    "static/css/main.2bc7357d.chunk.css.map": "/cowin-slot-finder/static/css/main.2bc7357d.chunk.css.map",
-    "static/js/2.ea904bfc.chunk.js.LICENSE.txt": "/cowin-slot-finder/static/js/2.ea904bfc.chunk.js.LICENSE.txt"
+    "main.css": "/CoWin-Vaccine-Slot-Finder/static/css/main.2bc7357d.chunk.css",
+    "main.js": "/CoWin-Vaccine-Slot-Finder/static/js/main.203c601d.chunk.js",
+    "main.js.map": "/CoWin-Vaccine-Slot-Finder/static/js/main.203c601d.chunk.js.map",
+    "runtime-main.js": "/CoWin-Vaccine-Slot-Finder/static/js/runtime-main.dfb607bd.js",
+    "runtime-main.js.map": "/CoWin-Vaccine-Slot-Finder/static/js/runtime-main.dfb607bd.js.map",
+    "static/js/2.ea904bfc.chunk.js": "/CoWin-Vaccine-Slot-Finder/static/js/2.ea904bfc.chunk.js",
+    "static/js/2.ea904bfc.chunk.js.map": "/CoWin-Vaccine-Slot-Finder/static/js/2.ea904bfc.chunk.js.map",
+    "static/js/3.81b918cb.chunk.js": "/CoWin-Vaccine-Slot-Finder/static/js/3.81b918cb.chunk.js",
+    "static/js/3.81b918cb.chunk.js.map": "/CoWin-Vaccine-Slot-Finder/static/js/3.81b918cb.chunk.js.map",
+    "index.html": "/CoWin-Vaccine-Slot-Finder/index.html",
+    "static/css/main.2bc7357d.chunk.css.map": "/CoWin-Vaccine-Slot-Finder/static/css/main.2bc7357d.chunk.css.map",
+    "static/js/2.ea904bfc.chunk.js.LICENSE.txt": "/CoWin-Vaccine-Slot-Finder/static/js/2.ea904bfc.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.2d40b6f9.js",
+    "static/js/runtime-main.dfb607bd.js",
     "static/js/2.ea904bfc.chunk.js",
     "static/css/main.2bc7357d.chunk.css",
     "static/js/main.203c601d.chunk.js"
