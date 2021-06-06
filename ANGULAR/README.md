@@ -1,7 +1,12 @@
 # ANGULAR
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.1.
-
+  
+## Install Angular CLI
+```
+npm install -g @angular/cli
+```
+  
 ## Create new Project
   
 Run `ng new <project name>` to create new Angular Project
