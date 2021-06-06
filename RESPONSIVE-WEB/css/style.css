@@ -1,0 +1,160 @@
+/* Import Lato font */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+/* We can define properties or variables which canbe re-used in css multiple times in :root */
+:root {
+    --primary-color: #047aed;
+}
+
+/* Default styling for all elements 
+ * Box Sizing allow setting margin and padding without thinking about elements width and height */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* Set default font and color for body elements 
+ * Line height sets the gab between 2 lines. and 1.6 spread them a bit more. */
+body {
+    font-family: 'Lato', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Remove bullet points from UL */
+ul {
+    list-style-type: none;
+}
+
+/* Remove underlines from links and set color to default text color*/
+a {
+    text-decoration: none;
+    color:#333;
+}
+
+/* For headers, make it less bold with font weight and change line height to there is not lot of gap. 
+ * Also add top and botton margin of 10px but left and right margin 0px */
+h1, h2 {
+    font-weight: 300;
+    line-height: 1.2;
+    margin: 10px 0px;
+}
+
+/* Add margin for paragraphs as well */
+p {
+    margin: 10px 0px;
+}
+
+/* Set width of 100% for images so they don't overflow from their container */
+img {
+    width: 100%;
+}
+
+/* ---------------------------------------------------------------------------
+ *                         UTILITIES
+ *---------------------------------------------------------------------------- */
+/* Container are to place items in middle if screen size is big 
+ * So we set max width to 1100px and margin of left and right to auto
+ * If screen size goes more than 1100px, the container is aligned center 
+ * Overflow auto removed margin from h1 tag
+ * And left and right padding for screens smaller than 1100px*/
+.container {
+    max-width: 1100px;
+    margin: 0px auto;
+    overflow: auto;
+    padding: 0px 40px;
+}
+
+/* Flex class convert a div to flex box and we can align items 
+ * Flex Direction tells whether flex is row or column
+ * And Justify content tells the justifictaion in flex box "space-between" justification put stretch in between
+* Aligh items align content in cross axis i.e. if flex box is row, align items align in column and vice versa*/
+.flex {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+}
+
+/* grid takes the conatainer and conveert it into grid. 
+ * And we can define how big each coluumn in a row can be using px(pixel), %(percent) or fr(fraction) notation 
+ * if we want same property value multiple times we can use repeat 
+ * 1fr 1fr can also be written as repeat(2, 1fr) 
+ * gap is grid gap  between each column*/
+ .grid {
+     display: grid;
+     /* grid-template-columns: 1fr 1fr; */
+     grid-template-columns: repeat(2, 1fr);
+     gap: 20px;
+     justify-content: center;
+     align-items: center;
+     height: 100%;
+ }
+
+ /* Card Class Set 10px radiur of corner 
+  * Box shadow of black color and 0.2alpha for transparency
+  * */
+ .card {
+     background-color: #fff;
+     border-radius: 10px;
+     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+ }
+
+/* ---------------------------------------------------------------------------
+ *                         NAVBAR
+ *---------------------------------------------------------------------------- */
+/* Now lets style the Navigation Bar adn use primary color varible defined in :root on top*/
+.navbar {
+    background-color: var(--primary-color);
+    color: #fff;
+    height: 70px;
+}
+
+/* Above flex is for all items but if flx is insite navbar, we need differet setting */
+.navbar .flex {
+    justify-content: space-between;
+}
+
+/* And if there are list in navbar, convert that list to flex again */
+.navbar ul {
+    display: flex;
+}
+
+/* And style links in navbar */
+.navbar a {
+    color: #fff;
+    padding: 10px;
+    margin: 0px 5px;
+}
+
+/* Styling hover effect on navbar links*/
+.navbar a:hover {
+    border-bottom: 2px #fff solid;
+}
+
+/* ---------------------------------------------------------------------------
+ *                         SHOWCASE
+ *---------------------------------------------------------------------------- */
+ /* Styling for showcase section */
+ .showcase {
+     height: 400px;
+     background-color: var(--primary-color);
+     color: #fff;
+     position: relative;
+ }
+
+ /* We need H1 to be little bigger in showcase */
+ .showcase h1 {
+     font-size: 40px;
+ }
+
+ /* And little more padding for paragraph */
+ .showcase p {
+     padding: 20px 0px;
+ }
+
+ /* Customize showcase grid */
+ .showcase .grid {
+     grid-template-columns: 55% 45%;
+     gap: 30px;
+ }

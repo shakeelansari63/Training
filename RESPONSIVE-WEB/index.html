@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Add Our own Stylesheet-->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Add Font Awesome. Get link from cdnjs.com-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Set Title-->
+    <title>Loruki | Cloud Hosting for Everyone</title>
+</head>
+
+<body>
+    <!-- Navbar class will be top bar which will have header and navigation list-->
+    <div class="navbar">
+        <!-- Container div to show logo and navigation list-->
+        <div class="container flex">
+            <!-- Show Logo with H1 tag-->
+            <h1 class="logo">Loruki.</h1>
+            <!-- Navigation List with unordered list-->
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="docs.html">Docs</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Showcase part shows some text and request demo form -->
+    <section class="showcase">
+        <!-- We have container class to put everything in 1100px area -->
+        <div class="container grid">
+            <!-- Here we display showcase text-->
+            <div class="showcase-text">
+                <!-- Showcase text heading -->
+                <h1>Easier Deployment</h1>
+                <!-- Showcase text content-->
+                <p>Deploy web apps of all kinds, from large scale enterprise APIs to static websites for individuals.
+                    Fill out the form to try a demo of our platform</p>
+                <!-- Link to features page for more details this link would look like button-->
+                <a href="features.html" class="btn btn-outline">Read More</a>
+            </div>
+            <!-- And Showcas form to get user inputs and show in card layout -->
+            <div class="showcase-form card">
+                <h2>Request a Demo</h2>
+                <!-- Form for user inputs-->
+                <form>
+                    <div class="form-control">
+                        <input type="text" name="name" placeholder="Name" required>
+                    </div>
+                    <div class="form-control">
+                        <input type="text" name="company" placeholder="Company Name" required>
+                    </div>
+                    <div class="form-control">
+                        <input type="email" name="email" placeholder="Email" required>
+                    </div>
+                    <input type="submit" value="Send" class="btn btn-primary">
+                </form>
+
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
