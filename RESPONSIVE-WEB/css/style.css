@@ -3,6 +3,8 @@
 /* We can define properties or variables which canbe re-used in css multiple times in :root */
 :root {
     --primary-color: #047aed;
+    --secondary-color: #1c3fa8;
+    --dark-color: #002240;
 }
 
 /* Default styling for all elements 
@@ -98,7 +100,208 @@ img {
      background-color: #fff;
      border-radius: 10px;
      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+     margin: 10px;
+     padding: 20px;
+     color: #333;
  }
+
+ /* Format Buttons */
+ .btn {
+     display: inline-block;
+     border: 0px;
+     border-radius: 5px;
+     padding: 10px 30px;
+     cursor: pointer;
+     background-color: var(--primary-color);
+     color: #fff;
+ }
+
+ /* Styling outline only button */
+ .btn-outline {
+     background-color: transparent;
+     border: 1px solid #fff;
+ }
+
+ /* Hover effect for buttons */
+ .btn:hover {
+     transform: scale(0.99);
+ }
+
+ /* background and button color */
+ .bg-secondary, .btn-secondary {
+     background-color: var(--secondary-color);
+     color: #fff;
+ }
+
+ .bg-dark, .btn-dark {
+    background-color: var(--dark-color);
+    color: #fff;
+}
+
+.bg-light, .btn-light {
+    background-color: var(--light-color);
+    color: #333;
+}
+
+.bg-primary, .btn-primary {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.bg-primary a, .btn-primary a,
+.bg-secondary a, .btn-secondary a,
+.bg-dark a, .btn-dark a {
+    color: #fff
+}
+
+/* 3 column grid */
+.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Center Text */
+.text-center {
+    text-align: center;
+}
+
+/* Margin classes */
+.my-1 {
+    margin: 1rem 0 ;
+}
+
+.my-2 {
+    margin: 1.5rem 0 ;
+}
+
+.my-3 {
+    margin: 2rem 0 ;
+}
+
+.my-4 {
+    margin: 2.5rem 0 ;
+}
+
+.my-5 {
+    margin: 3rem 0 ;
+}
+
+.mx-1 {
+    margin: 0 1rem ;
+}
+
+.mx-2 {
+    margin: 0 1.5rem ;
+}
+
+.mx-3 {
+    margin: 0 2rem;
+}
+
+.mx-4 {
+    margin: 0 2.5rem;
+}
+
+.mx-5 {
+    margin: 0 3rem;
+}
+
+.m-1 {
+    margin: 1rem;
+}
+
+.m-2 {
+    margin: 1.5rem;
+}
+
+.m-3 {
+    margin: 2rem;
+}
+
+.m-4 {
+    margin: 2.5rem;
+}
+
+.m-5 {
+    margin: 3rem;
+}
+
+/* Padding classes */
+.py-1 {
+    padding: 1rem 0 ;
+}
+
+.py-2 {
+    padding: 1.5rem 0 ;
+}
+
+.py-3 {
+    padding: 2rem 0 ;
+}
+
+.py-4 {
+    padding: 2.5rem 0 ;
+}
+
+.py-5 {
+    padding: 3rem 0 ;
+}
+
+.px-1 {
+    padding: 0 1rem ;
+}
+
+.px-2 {
+    padding: 0 1.5rem ;
+}
+
+.px-3 {
+    padding: 0 2rem;
+}
+
+.px-4 {
+    padding: 0 2.5rem;
+}
+
+.px-5 {
+    padding: 0 3rem;
+}
+
+.p-1 {
+    padding: 1rem;
+}
+
+.p-2 {
+    padding: 1.5rem;
+}
+
+.p-3 {
+    padding: 2rem;
+}
+
+.p-4 {
+    padding: 2.5rem;
+}
+
+.p-5 {
+    padding: 3rem;
+}
+
+/* Text Sizes */
+.sm {
+    font-size: 1rem;
+}
+
+.md {
+    font-size: 2rem;
+}
+
+.lg {
+    font-size: 3rem;
+}
+
+.xl {
+    font-size: 4rem;
+}
 
 /* ---------------------------------------------------------------------------
  *                         NAVBAR
@@ -157,4 +360,196 @@ img {
  .showcase .grid {
      grid-template-columns: 55% 45%;
      gap: 30px;
+     overflow: visible;
  }
+
+ /* Showcase form styling
+  * We move it below by 60px using top
+  * z-index makes sure the form is always shown and it is on top
+  * Since we have set width parameter, we can justify it to right using justify-self. */
+ .showcase-form {
+     position: relative;
+     top: 60px;
+     height: 350px;
+     width: 400px;
+     padding: 40px;
+     z-index: 100;
+     justify-self: flex-end;
+ }
+
+ /* Styling Showcase form items */
+ .showcase-form .form-control {
+     margin: 30px 0px;
+ }
+
+ /* Styling Text and email inputs */
+ .showcase-form input[type='text'], .showcase-form input[type='email'] {
+    border: 0px;
+    border-bottom: 1px solid #b4becb;
+    width: 100%;
+    padding: 3px;
+    font-size: 16px;
+ }
+
+ /* remove border from input when clicked on or focused */
+ .showcase-form input:focus {
+     outline: none;
+ }
+
+ /* Slant area below showcase 
+  * Set Position to absolute, since it is after showcasse and to put it 60px from bottom
+  * transform skewY will skew it by 3degree in Y axis*/
+.showcase::after  {
+     content: '';
+     position: absolute;
+     height: 100px;
+     bottom: -60px;
+     right: 0;
+     left: 0;
+     background: #fff;
+     transform: skewY(-3deg);
+     -webkit-transform: skewY(-3deg);
+     -mox-transform: skewY(-3deg);
+     -ms-transform: skewY(-3deg); 
+ }
+
+ /* Stats Sections */
+ .stats {
+     padding-top: 100px;
+ }
+
+ .stats .grid h3 {
+     font-size: 35px;
+ }
+
+ .stats .grid p {
+     font-size: 20px;
+     font-weight: bold;
+ }
+
+ /* CLI Section 
+  * The column need to be 2:1 so that imag elook big 
+  * and we need 2 rows so cards are one below other */
+ .cli .grid {
+     grid-template-columns: 2fr 1fr;
+     grid-template-rows: repeat(2, 1fr);
+ }
+
+ /* Now we need the 1st child to span to 2 columns so the cards are one belo other */
+.cli .grid > *:first-child {
+    grid-row: 1 / span 2;
+}
+
+/* Cloud Section */
+.cloud .grid {
+    grid-template-columns: 4fr 3fr;
+}
+
+.lead {
+    font-size: 20px;
+}
+
+/* Languages Section */
+.languages .flex {
+    flex-wrap: wrap;
+}
+
+.languages .card {
+    margin: 18px 10px 40px;
+    transition: transform 0.1s ease-in; /* Transition makes transform smooth */
+    cursor: pointer;
+}
+
+.languages .logo-name {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.languages .card:hover {
+    transform: translateY(-15px); /* Move the card up by 15px if hovered */
+}
+
+/* Features Section for Features Page */
+/* Image setting for Featires section */
+.features-head img {
+    width: 200px;
+    justify-self: flex-end;
+}
+
+.features-sub-head img {
+    width: 300px;
+    justify-self: flex-end;
+}
+
+.features-main .card i {
+    margin-right: 20px;
+}
+
+/* Span 1st card to 3 columns and 2nd card to 2 columns */
+.features-main .grid {
+    padding: 30px;
+}
+.features-main .grid > *:first-child {
+    grid-column: 1 / span 3;
+}
+
+.features-main .grid > *:nth-child(2) {
+    grid-column: 1 / span 2;
+}
+
+/* Footer Section */
+.footer .social a {
+    margin: 0px 10px;
+}
+
+
+
+/* Add responsiveness to Page by adding media queries */
+/* Following css will be applied if width of screen gows below 768px */
+@media(max-width: 800px) {
+    /* Convert all grids to 1 column so they all stack in row */
+    .grid, 
+    .cli .grid,
+    .showcase .grid,
+    .stats .grid,
+    .cloud .grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    /* Showcase height is set to 400px, set it to auto for it to take required space */
+    .showcase {
+        height: auto;
+    }
+
+    /* Center aligh the showcase text */
+    .showcase-text {
+        text-align: center;
+        margin: auto;
+    }
+
+    /* Showcase form is right aligned, center align it */
+    .showcase-form {
+        justify-self: center;
+        margin: auto;
+    }
+}
+
+/* If screen size goes below 500, we want navigation buttons to come down or they will overlap with header */
+@media(max-width: 500px) {
+    /* increase height of navbar so the links go down */
+    .navbar {
+        height: 110px;
+    }
+
+    /* Convert flex to column instead of row which is default */
+    .navbar .flex {
+        flex-direction: column;
+    }
+
+    /* Add some customization to links for mobile devices */
+    .navbar ul {
+        padding: 10px ;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+}
