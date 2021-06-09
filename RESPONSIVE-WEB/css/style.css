@@ -412,6 +412,11 @@ pre, code {
      overflow: visible;
  }
 
+ /* Animation for Showcase Text. The animations are defined via @keyframes in this CSS file */
+ .showcase-text {
+     animation: slideInFromLeft 0.8s ease-in;
+ }
+
  /* Showcase form styling
   * We move it below by 60px using top
   * z-index makes sure the form is always shown and it is on top
@@ -424,6 +429,7 @@ pre, code {
      padding: 40px;
      z-index: 100;
      justify-self: flex-end;
+     animation: slideInFromRight 0.8s ease-in;
  }
 
  /* Styling Showcase form items */
@@ -465,6 +471,7 @@ pre, code {
  /* Stats Sections */
  .stats {
      padding-top: 100px;
+     animation: slideInFromBottom 0.8s ease-in;
  }
 
  .stats .grid h3 {
@@ -573,6 +580,46 @@ pre, code {
     margin: 0px 10px;
 }
 
+/* Define keyframes for animations and use the animations for each class */
+/* Slide object from left - At beginning, it is extreme left i.e. -100% and then it comes to its position i.e. 0 */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Slide object from right - At beginning, it is extreme right i.e. 100% and then it comes to its position i.e. 0 */
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Slide object from top - At beginning, it is extreme top i.e. -100% and then it comes to its position i.e. 0 */
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Slide object from bottom - At beginning, it is extreme bottom i.e. 100% and then it comes to its position i.e. 0 */
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
 
 
 /* Add responsiveness to Page by adding media queries */
