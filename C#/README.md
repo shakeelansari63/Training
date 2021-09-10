@@ -15,3 +15,10 @@ mcs <filename>.cs
 ```
 mono <filename>.exe
 ```
+
+## To run ASP.NET Project, you would need XSP
+XSP is in AUR repository in Arch Linux
+
+```
+pamac install xsp
+```
