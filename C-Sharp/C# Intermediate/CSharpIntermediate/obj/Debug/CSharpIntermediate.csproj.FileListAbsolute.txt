@@ -1,0 +1,8 @@
+C:/Projects/CSharpIntermediate/CSharpIntermediate/bin/Debug/CSharpIntermediate.exe.config
+C:/Projects/CSharpIntermediate/CSharpIntermediate/bin/Debug/CSharpIntermediate.exe
+C:/Projects/CSharpIntermediate/CSharpIntermediate/bin/Debug/CSharpIntermediate.pdb
+C:/Projects/CSharpIntermediate/CSharpIntermediate/obj/Debug/CSharpIntermediate.csprojResolveAssemblyReference.cache
+C:/Projects/CSharpIntermediate/CSharpIntermediate/obj/Debug/CSharpIntermediate.exe
+C:/Projects/CSharpIntermediate/CSharpIntermediate/obj/Debug/CSharpIntermediate.pdb
+/home/freak/Dev/Home/Projects/Training/C-Sharp/C# Intermediate/CSharpIntermediate/obj/Debug/CSharpIntermediate.exe
+/home/freak/Dev/Home/Projects/Training/C-Sharp/C# Intermediate/CSharpIntermediate/obj/Debug/CSharpIntermediate.pdb

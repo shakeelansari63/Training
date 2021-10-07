@@ -51,9 +51,6 @@ dotnet restore
 ```
 
 # Adding Entity Framework Command Line Tool to project
-Add following line in .csproj
-```xml
-<ItemGroup>
-	<DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.3" />
-</ItemGroup>
+```
+dotnet tool install --tool-path <PATH-WHERE-TO-INSTALL> dotnet-ef --version 3.*
 ```
