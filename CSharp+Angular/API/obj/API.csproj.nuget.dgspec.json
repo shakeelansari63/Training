@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/freak/Projects/Training/CSharp+Angular/API/API.csproj": {}
+    "/home/freak/Dev/Home/Projects/Training/CSharp+Angular/API/API.csproj": {}
   },
   "projects": {
-    "/home/freak/Projects/Training/CSharp+Angular/API/API.csproj": {
+    "/home/freak/Dev/Home/Projects/Training/CSharp+Angular/API/API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/freak/Projects/Training/CSharp+Angular/API/API.csproj",
+        "projectUniqueName": "/home/freak/Dev/Home/Projects/Training/CSharp+Angular/API/API.csproj",
         "projectName": "API",
-        "projectPath": "/home/freak/Projects/Training/CSharp+Angular/API/API.csproj",
+        "projectPath": "/home/freak/Dev/Home/Projects/Training/CSharp+Angular/API/API.csproj",
         "packagesPath": "/home/freak/.nuget/packages/",
-        "outputPath": "/home/freak/Projects/Training/CSharp+Angular/API/obj/",
+        "outputPath": "/home/freak/Dev/Home/Projects/Training/CSharp+Angular/API/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/freak/.nuget/NuGet/NuGet.Config"
@@ -42,11 +42,11 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[5.0.11, )"
+              "version": "[5.0.9, )"
             },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
-              "version": "[5.0.11, )"
+              "version": "[5.0.9, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -71,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/freak/Apps/dotnet/sdk/5.0.402/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/home/freak/Dev/Apps/dotnet/sdk/5.0.400/RuntimeIdentifierGraph.json"
         }
       }
     }
