@@ -104,3 +104,14 @@ dotnet ef migrations add <MigrationName> -o <OutputDirectory>
 ```
 dotnet ef database update
 ```
+
+## C# Controller Basic
+
+-   `[ApiController]` decorator tells .NET that following class is an API Controller
+-   `[Route("api/[controller]")]` decorator defines the endpoint for Controller. We can use `[controller]` inside route to define default convention.
+-   All API Controllers inherit from `ControllerBase`
+-   In default convention Prefix before `Controller` in controller name replaces the `[controller]` in route.
+-   `[HttpGet]` decorator on a method defines action for GET endpoint.
+-   `[HttpGet("{id}")]` GET endpoint can also have parameter which can be used as input. This in envoked when parameter is sent as follow - 'api/controller/id'
+-   All ApiMethods must return `ActionResult<DataType>`
+-   Async API methods must return `Task<ActionResult<DataType>>`
