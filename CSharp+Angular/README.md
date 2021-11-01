@@ -1,5 +1,7 @@
 # Builing App with Dotnet and Angular
 
+# API
+
 ## Requirement
 
 ```
@@ -115,3 +117,57 @@ dotnet ef database update
 -   `[HttpGet("{id}")]` GET endpoint can also have parameter which can be used as input. This in envoked when parameter is sent as follow - 'api/controller/id'
 -   All ApiMethods must return `ActionResult<DataType>`
 -   Async API methods must return `Task<ActionResult<DataType>>`
+
+## Adding Cors
+
+CORS are added in Startup.cs file otherwise API will not allow any app access to its endpoints.  
+_ConfigureServices_ method
+
+```c#
+services.AddCors();
+```
+
+_Configure_ method
+
+```c#
+app.UseCors(policy => policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:4200"));
+```
+
+# Client App
+
+## Requirement
+
+```
+Angular 10+
+Bootatrap (use ngx-bootstrap)
+```
+
+## Installing Angular
+
+```
+npm install -g @angular/cli
+```
+
+## Create new App with Angular CLI
+
+```
+ng new AppName
+```
+
+## Add Bootstrap to Angular App
+
+```
+ng add ngx-bootstrap
+```
+
+## Add SSL Layer to Angular
+
+Update _angular.json_ - _server_ section
+
+```json
+"options": {
+    "sslCert": "./ssl/server.crt",
+    "sslKey": "./ssl/server.key",
+    "ssl": true
+},
+```
