@@ -74,7 +74,7 @@ dotnet new gitignore
 ## Adding Entity Framework to Project
 
 If you are using VSCode, you can use nuGet Gallery Extension to add Entity Framework and Database Provider to the project.  
-For SQLite, you would neen
+For SQLite, you would need
 
 ```
 Microsoft.EntityFrameworkCore.Sqlite
@@ -132,6 +132,57 @@ _Configure_ method
 ```c#
 app.UseCors(policy => policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:4200"));
 ```
+
+## Adding Services
+Inside `ConfigureServices` method of `Startup.cs` add new Services using either of bellow 3 methods.
+```c#
+services.AddSingleton<Interface, Implementation>(); // Initialise with app start and lives till lifecycle of app
+services.AddScoped<Interface, Implementation>(); // Initialise with HttpRequest and end with request
+services.AddTransient<Interface, Implementation>(); // Initialise with method execution and ends with method. Not considered suitable for Http.
+```
+
+## Creating JWT Token for Authentication to API
+ - Install following package
+ ```
+ System.IdentityModel.Tokens.Jwt
+ ```
+ 
+ - Create Token Service and corresponding interface and add then to Configuration
+ ```c#
+ service.AddScoped<ITokenService, TokenService>();
+ ```
+
+ - Take a look at ITokenService and TokenService in this app
+
+ - Call Token Services in Controller for creating Tokens
+
+## Validating JWT Token in API
+ - Install following Package
+ ```
+ Microsoft.AspNetCore.Authentication.JwtBearer
+ ```
+
+ - Add Authorize Annotation to Controllers. We can add Annotation to Controller or Controller functions.  
+  Easiest option is to add `[Authorize]` annotation on Base controller and `[AllowAnonymous]` annotation on Register/Login Controller.
+
+ - Add Authentication option in `ConfigureServices` method of Startup Class
+ ```c#
+ services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(option => {
+        option.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["TokenKey"])),
+            ValidateIssuer = false,
+            ValidateAudience = false
+        };
+    });
+ ```
+
+ - Add UseAuthentication in `Configure` method
+ ```
+ app.UseAuthentication();
+ ```
 
 # Client App
 

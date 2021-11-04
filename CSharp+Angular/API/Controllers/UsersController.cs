@@ -10,9 +10,8 @@ using Microsoft.EntityFrameworkCore;
 namespace API.Controllers
 {
     // This is Users Controller which will server api/users endpoint
-    [ApiController]
-    [Route("api/[controller]")]
-    public class UsersController : ControllerBase
+    
+    public class UsersController : BaseController
     {
         // Constructor for initializing Database Context
         private readonly DataContext _context;
