@@ -119,3 +119,10 @@
 /home/freak/Dev/Home/Projects/Training/CSharp+Angular/API/bin/Debug/net5.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
 /home/freak/Dev/Home/Projects/Training/CSharp+Angular/API/bin/Debug/net5.0/Microsoft.IdentityModel.Protocols.dll
 /home/freak/Dev/Home/Projects/Training/CSharp+Angular/API/bin/Debug/net5.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/home/freak/Projects/Training/CSharp+Angular/API/bin/Debug/net5.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/home/freak/Projects/Training/CSharp+Angular/API/bin/Debug/net5.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/home/freak/Projects/Training/CSharp+Angular/API/bin/Debug/net5.0/Microsoft.IdentityModel.Logging.dll
+/home/freak/Projects/Training/CSharp+Angular/API/bin/Debug/net5.0/Microsoft.IdentityModel.Protocols.dll
+/home/freak/Projects/Training/CSharp+Angular/API/bin/Debug/net5.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/home/freak/Projects/Training/CSharp+Angular/API/bin/Debug/net5.0/Microsoft.IdentityModel.Tokens.dll
+/home/freak/Projects/Training/CSharp+Angular/API/bin/Debug/net5.0/System.IdentityModel.Tokens.Jwt.dll

@@ -1,7 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 
+/* Import Boostwatch Theme Variables */
+@import "~bootswatch/dist/darkly/variables";
+
 /* Importing Bootstrap SCSS file. */
 @import "~bootstrap/scss/bootstrap";
 
+/* Import Boostwatch Themes */
+@import "~bootswatch/dist/darkly/bootswatch";
+
 /* Importing Datepicker SCSS file. */
 @import "~ngx-bootstrap/datepicker/bs-datepicker";
+
+/* Import Toastr */
+@import "~ngx-toastr/toastr.css";

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "12p4T5/Hp6eFidtI+4A+rVtd15FyfZDqLdkq2aEbI0ZoCcNG26P/Iaxo2Gl9tMdS0b8IVZqlELK6SaHLlEg0eQ==",
+  "dgSpecHash": "3CcnPDphH+Uv8/LvrmThbv75VdvV0bqOORW+dD2/muVi6nRsR4wuD0yLUTS7m4veki3mpab+k6fAOKPfdqJFKA==",
   "success": true,
-  "projectFilePath": "/home/freak/Dev/Home/Projects/Training/CSharp+Angular/API/API.csproj",
+  "projectFilePath": "/home/freak/Projects/Training/CSharp+Angular/API/API.csproj",
   "expectedPackageFiles": [
     "/home/freak/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/home/freak/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/5.0.9/microsoft.aspnetcore.authentication.jwtbearer.5.0.9.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/freak/Dev/Home/Projects/Training/CSharp+Angular/API/API.csproj": {}
+    "/home/freak/Projects/Training/CSharp+Angular/API/API.csproj": {}
   },
   "projects": {
-    "/home/freak/Dev/Home/Projects/Training/CSharp+Angular/API/API.csproj": {
+    "/home/freak/Projects/Training/CSharp+Angular/API/API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/freak/Dev/Home/Projects/Training/CSharp+Angular/API/API.csproj",
+        "projectUniqueName": "/home/freak/Projects/Training/CSharp+Angular/API/API.csproj",
         "projectName": "API",
-        "projectPath": "/home/freak/Dev/Home/Projects/Training/CSharp+Angular/API/API.csproj",
+        "projectPath": "/home/freak/Projects/Training/CSharp+Angular/API/API.csproj",
         "packagesPath": "/home/freak/.nuget/packages/",
-        "outputPath": "/home/freak/Dev/Home/Projects/Training/CSharp+Angular/API/obj/",
+        "outputPath": "/home/freak/Projects/Training/CSharp+Angular/API/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/freak/.nuget/NuGet/NuGet.Config"
@@ -79,7 +79,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/freak/Dev/Apps/dotnet/sdk/5.0.400/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/home/freak/Apps/dotnet/sdk/5.0.402/RuntimeIdentifierGraph.json"
         }
       }
     }

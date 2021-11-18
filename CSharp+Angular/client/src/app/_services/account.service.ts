@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../_models/user.model';
-import { map } from 'rxjs/operators';
+import { buffer, map } from 'rxjs/operators';
 import { ReplaySubject } from 'rxjs';
 
 @Injectable({
@@ -9,7 +9,7 @@ import { ReplaySubject } from 'rxjs';
 })
 export class Accounts {
 
-  private currentUser = new ReplaySubject<User>();
+  private currentUser = new ReplaySubject<User>(1);
   currentUser$ = this.currentUser.asObservable();
 
   constructor(private http: HttpClient) { }
