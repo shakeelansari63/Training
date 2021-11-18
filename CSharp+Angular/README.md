@@ -222,3 +222,27 @@ Update _angular.json_ - _server_ section
     "ssl": true
 },
 ```
+
+## Using Toast Notifiation
+```
+npm install ngx-toastr
+```
+  
+Import following in app module
+```ts
+ToastrModule.forRoot({positionClass: 'toast-bottom-right'})
+```
+
+And inject ToastrService to show toast
+  
+## Using Bootstrap Themes
+```
+npm install bootswatch
+```
+  
+Import bootswatch scss in following sequence
+```scss
+@import "~bootswatch/dist/[theme]/variables";
+@import "~bootstrap/scss/bootstrap";
+@import "~bootswatch/dist/[theme]/bootswatch";
+````
