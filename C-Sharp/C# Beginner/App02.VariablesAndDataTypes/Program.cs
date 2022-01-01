@@ -91,7 +91,43 @@ namespace App02.VariablesAndDataTypes
             // Console Formatting
             Console.BackgroundColor = ConsoleColor.DarkBlue;
             Console.ForegroundColor = ConsoleColor.Green;
-            System.Console.WriteLine("Fomatted Output");
+            System.Console.Write("Fomatted Output");
+
+            Console.ResetColor();
+
+            System.Console.WriteLine();
+            // Datatype Conversion
+            // Implicit Conversion - Small type to Large Type
+            int i6 = 66;
+            long l3 = i6;
+            System.Console.WriteLine($"Long {l3} is converted from Int {i6}");
+
+            float f4 = 33.33f;
+            double d4 = f4;
+            System.Console.WriteLine($"Double {d4} is converted from Float {f4}");
+
+            // Explicit Conversion, an lead to data loss
+            float f5 = 13.67f;
+            int i7 = (int) f5;
+            System.Console.WriteLine($"Int {i7} is converted from Float {f5}");
+
+            double d5 = 137.83829839283289;
+            f5 = (float) d5;
+            System.Console.WriteLine($"Float {f5} is converted from Double {d5}");
+
+            // Conversion to String - use ToString() methods
+            System.Console.WriteLine($"String {i7.ToString()} is converted from Int {i7}");
+
+            // Parsing from String
+            string s3 = "15";
+            string s4 = "13";
+            int i8 = Int32.Parse(s3) + Int32.Parse(s4);
+            System.Console.WriteLine($"Sum of string {s3} and {s4} is {s3+s4}, But After parsing sum is {i8}");
+
+            // Constants - Use const before Data type
+            const string dob = "01-01-1990";
+            System.Console.WriteLine($"My Date of Birth is always {dob} and it will never change...");
+
         }
     }
 }
