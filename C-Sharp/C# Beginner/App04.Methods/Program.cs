@@ -9,6 +9,8 @@ namespace App04.Methods
             MethodWithoutParamAndReturn();
 
             MethodWithParameters("Some string goes here");
+            
+            Console.WriteLine(MethodWithParameterAndReturn("My new param string"));
         }
         
         // We can only access static methods from otehr static metods.
@@ -21,6 +23,11 @@ namespace App04.Methods
         public static void MethodWithParameters(string someParam)
         {
             Console.WriteLine("Hello this is your parameter - " + someParam);
+        }
+
+        public static string MethodWithParameterAndReturn(string someParam)
+        {
+            return "Hello this is new string and we will return this with - " + someParam;
         }
     }
 }
