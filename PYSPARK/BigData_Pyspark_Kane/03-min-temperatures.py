@@ -12,9 +12,10 @@ def parseLine(line):
 
 lines = sc.textFile("1800.csv")
 parsedLines = lines.map(parseLine)
-minTemps = parsedLines.filter(lambda x: "TMIN" in x[1]).map(lambda x: (x[0], x[2]))
-minTemps = minTemps.reduceByKey(lambda x, y: min(x,y))
-results = minTemps.collect()
+minTemps = parsedLines.filter(lambda x: "TMIN" in x[1])
+stationTemps = minTemps.map(lambda x: (x[0], x[2]))
+minTemps = stationTemps.reduceByKey(lambda x, y: min(x,y))
+results = minTemps.collect();
 
 for result in results:
     print(result[0] + "\t{:.2f}C".format(result[1]))

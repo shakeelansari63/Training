@@ -12,7 +12,7 @@ def parseLine(line):
 lines = sc.textFile("fakefriends.csv")
 rdd = lines.map(parseLine)
 totalsByAge = rdd.mapValues(lambda x: (x, 1)).reduceByKey(lambda x, y: (x[0] + y[0], x[1] + y[1]))
-averagesByAge = totalsByAge.mapValues(lambda x: x[0] / x[1])
-results = sorted(averagesByAge.collect(), key = lambda x: x[1], reverse = True)
+averagesByAge = totalsByAge.mapValues(lambda x: x[0] // x[1]).sortByKey()
+results = averagesByAge.collect()
 for result in results:
-    print(f'{result[0]} : {result[1]}')
+    print(result)
