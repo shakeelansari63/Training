@@ -9,6 +9,6 @@
   "author": "Shakeel Ansari",
   "license": "ISC",
   "dependencies": {
-    "electron": "^6.0.7"
+    "electron": "^15.5.5"
   }
 }
