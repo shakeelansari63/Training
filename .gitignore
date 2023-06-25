@@ -3,6 +3,7 @@
 */__pycache__/
 */.vscode
 */.atom
+**/.venv
 
 # Python Notebook
 **/.ipynb_checkpoints
