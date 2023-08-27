@@ -15,16 +15,22 @@ class _QuizAppState extends State<QuizApp> {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Image.asset('assets/quiz-logo.png'),
+        Image.asset(
+          'assets/quiz-logo.png',
+          color: const Color.fromARGB(180, 255, 255, 255),
+        ),
         const SizedBox(
           height: 100,
         ),
-        OutlinedButton(
+        OutlinedButton.icon(
           onPressed: startQuiz,
           style: OutlinedButton.styleFrom(
-              foregroundColor: Colors.white, padding: const EdgeInsets.all(20)),
-          child: const Text('Start Quiz'),
-        )
+            foregroundColor: Colors.white,
+            padding: const EdgeInsets.all(20),
+          ),
+          icon: const Icon(Icons.arrow_right_alt),
+          label: const Text('Start Quiz'),
+        ),
       ],
     );
   }
