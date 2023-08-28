@@ -1,4 +1,3 @@
-import 'package:app04_quiz_game/quiz_app.dart';
 import 'package:flutter/material.dart';
 
 class GradientContainer extends StatelessWidget {
