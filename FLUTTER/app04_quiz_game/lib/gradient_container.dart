@@ -2,8 +2,9 @@ import 'package:app04_quiz_game/quiz_app.dart';
 import 'package:flutter/material.dart';
 
 class GradientContainer extends StatelessWidget {
-  const GradientContainer({super.key});
+  const GradientContainer(this.appScreen, {super.key});
 
+  final Widget appScreen;
   final colorStart = const Color.fromARGB(255, 33, 5, 109);
   final colorEnd = const Color.fromARGB(255, 68, 21, 149);
 
@@ -17,8 +18,8 @@ class GradientContainer extends StatelessWidget {
           colors: [colorStart, colorEnd],
         ),
       ),
-      child: const Center(
-        child: QuizApp(),
+      child: Center(
+        child: appScreen,
       ),
     );
   }
