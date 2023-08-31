@@ -13,6 +13,7 @@ class SplashScreen extends StatelessWidget {
         children: [
           Image.asset(
             'assets/quiz-logo.png',
+            width: 300,
             color: const Color.fromARGB(180, 255, 255, 255),
           ),
           const SizedBox(

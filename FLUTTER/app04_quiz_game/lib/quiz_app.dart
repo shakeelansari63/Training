@@ -1,3 +1,4 @@
+import 'package:app04_quiz_game/data/quiz_questions.dart';
 import 'package:flutter/material.dart';
 import 'package:app04_quiz_game/gradient_container.dart';
 import 'package:app04_quiz_game/splash_screen.dart';
@@ -11,12 +12,24 @@ class QuizApp extends StatefulWidget {
 }
 
 class _QuizAppState extends State<QuizApp> {
+  List<String> selectedAnswers = [];
   var appScreenId = 'splash-screen';
 
   void changeScreen() {
     setState(() {
       appScreenId = 'question-screen';
     });
+  }
+
+  void recordAnswer(String answer) {
+    selectedAnswers.add(answer);
+
+    if (selectedAnswers.length == questions.length) {
+      setState(() {
+        selectedAnswers = [];
+        appScreenId = 'splash-screen';
+      });
+    }
   }
 
   @override
@@ -26,7 +39,7 @@ class _QuizAppState extends State<QuizApp> {
     if (appScreenId == 'splash-screen') {
       appScreen = SplashScreen(changeScreen);
     } else {
-      appScreen = const QuestionScreen();
+      appScreen = QuestionScreen(onAnswerSelect: recordAnswer);
     }
     return MaterialApp(
       home: Scaffold(
