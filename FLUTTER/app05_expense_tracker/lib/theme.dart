@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 final lightColorScheme = ColorScheme.fromSeed(
-  seedColor: Colors.orange,
+  seedColor: const Color.fromARGB(255, 180, 36, 0),
 );
 
 final darkColorScheme = ColorScheme.fromSeed(
   brightness: Brightness.dark,
-  seedColor: Colors.orange,
+  seedColor: const Color.fromARGB(255, 255, 166, 0),
 );
 
 final lightTheme = ThemeData().copyWith(
