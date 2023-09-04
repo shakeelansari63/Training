@@ -79,6 +79,8 @@ class _ExpenseTrackerState extends State<ExpenseTracker> {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+
     Widget expenseWidget = const Center(
       child: Text("No Expenses found. Add some by clicking '+' on top"),
     );
@@ -105,16 +107,30 @@ class _ExpenseTrackerState extends State<ExpenseTracker> {
         ],
       ),
       body: Center(
-        child: Column(
-          children: [
-            Chart(
-              expenses: data,
-            ),
-            Expanded(
-              child: expenseWidget,
-            ),
-          ],
-        ),
+        child: screenWidth < 600
+            ? Column(
+                children: [
+                  Chart(
+                    expenses: data,
+                  ),
+                  Expanded(
+                    child: expenseWidget,
+                  ),
+                ],
+              )
+            : Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Expanded(
+                    child: Chart(
+                      expenses: data,
+                    ),
+                  ),
+                  Expanded(
+                    child: expenseWidget,
+                  ),
+                ],
+              ),
       ),
     );
   }
