@@ -11,3 +11,10 @@ else if (a < b) "Smaller"
 else "Same"
 
 println(compare(7, 5))
+
+// Methods can also return data of different Types
+def intOrString(a: Int, b: Int) = if (a > b) a + b
+else (a + b).toString
+
+println(f"${intOrString(2, 3).getClass}")
+println(f"${intOrString(3, 2).getClass}")
