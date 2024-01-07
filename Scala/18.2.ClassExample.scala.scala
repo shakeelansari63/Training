@@ -1,6 +1,6 @@
 // Lets create an object of Employee1 class
-// In order to run this script, You must first compile the 17.1.Classes.scala file
-// And run this script in scala using `scala -cp . 17.2.ClassExample.scala`
+// In order to run this script, You must first compile the 18.1.Classes.scala file
+// And run this script in scala using `scala -cp . 18.2.ClassExample.scala`
 // -cp parametr tells the class path to current location.
 val obj1 = new Employee1("John", "Doe")
 // Now object is created

@@ -37,7 +37,7 @@ class Employee2(val firstName: String, var lastName: String)
 // And lastName variable is created but without final. Which means, we can update this variable.
 // Also note lastName_$eq method. This is mutator, which will be used to update the variable.
 // So if you call <object>.lastname = "Some value", this mutator will be called.
-// See 17.2.ClassExample.scala for usage of these classes
+// See 18.2.ClassExample.scala for usage of these classes
 
 // As you noticed, these are accessors and Mutators. If you also need Java Style Getter (get<property name>)
 // and Setter (set<property name>), you can use BeansProperty annotations
