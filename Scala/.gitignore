@@ -1,4 +1,4 @@
 .scala-build
 .metals/**.db
-.metals/.**
+.metals/.reports
 **.class
