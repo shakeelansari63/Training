@@ -1,12 +1,13 @@
 // In Scala Class methods can be used as Infix Operator
 // e.g.
 class Foo4(x: Int) {
-  // Lets say this has 5 methods
+  // Lets say this has 6 methods
   def bar(y: Int) = x + y
   def baz(y: Int, z: Int) = x + y - z
   def qux(y: Int) = new Foo4(x + y)
   def *(y: Int) = x * y
   def apply(y: Int) = x - y
+  def +:(y: Int) = x + y
 }
 
 object InfixOperator extends App {
@@ -35,4 +36,11 @@ object InfixOperator extends App {
   println(foo.apply(4))
   println(foo apply 4)
   println(foo(4))
+
+  // Now Last one is Right Associative Colon.
+  // If a method name ends in Colon, it can be used as Infix in Right Associative way.
+  // E.g. -- See the +: method in above class
+  println(foo.+:(55)) // Normal Invocation
+  println(55 +: foo) // Infix way.
+  // But it has to be right associative due to colon (:) at end of method name
 }
