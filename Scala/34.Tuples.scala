@@ -28,4 +28,21 @@ object Tuples extends App {
     val t5 = t4.swap
     println(t4)
     println(t5)
+
+    // Also there is an Elegant way to create Tuple2
+    val t6 = 2 -> "Two" // This created Tuple2 as (2, "Two")
+    println(t6)
+
+    // What if we use multiple ->, it will create mulyiple Tuple2's embedded in one another
+    val t7 = 7 -> "T7" -> "July" -> 7.00
+    // This will first create Tuple 2 of 7 -> "T7" as (7, T7)
+    // Then it will create Tuple2 of (7, T7) -> "July" as ((7, T7), July)
+    // And Finally it will create Tuple2 of ((7, T7), July) -> 7.00 as (((7, T7), July), 7.0)
+    println(t7)
+
+    // So how would we access "T7" in tuple t7
+    println(t7._1._1._2)
+    // t7._1 = ((7, T7), July)
+    // (t7._1)._1 = (7, T7)
+    // ((t7._1)._1)._2 = "T7"
 }
