@@ -2,15 +2,14 @@
 // It is suggested to create Subclasses if there is Is-A relations
 // Example
 class Employee7(val firstName: String, val lastName: String) {
-  require(firstName.nonEmpty, "First Name cannot be empty")
-  require(lastName.nonEmpty, "Last Name cannot be empty")
+    require(firstName.nonEmpty, "First Name cannot be empty")
+    require(lastName.nonEmpty, "Last Name cannot be empty")
 
-  def fullName = s"$firstName $lastName"
+    def fullName = s"$firstName $lastName"
 }
 
 // Lets create a Subclass of Employee i.e. Manager
-class Manager1(firstName: String, lastName: String, val department: String)
-    extends Employee7(firstName, lastName)
+class Manager1(firstName: String, lastName: String, val department: String) extends Employee7(firstName, lastName)
 
 // Now this Manager class will inherit properties from Employee7 class.
 // And Notice, firstName and lastName are not defined either val/var.

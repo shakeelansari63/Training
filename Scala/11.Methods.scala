@@ -19,8 +19,8 @@ else (a + b).toString
 println(f"${intOrString(2, 3).getClass}")
 println(f"${intOrString(3, 2).getClass}")
 
-// Methods can also be defined inside other method. 
-// This is usefull if we need a method for some work inside other method only. 
+// Methods can also be defined inside other method.
+// This is usefull if we need a method for some work inside other method only.
 // We we don't want it to be used by outside world
 
 def someMethod(n: Int): Int = {
@@ -39,7 +39,7 @@ println(`Special method 1`(4))
 
 // Or with underscore
 def areYouHappy_?() = true
-println(if(areYouHappy_?) "Nice" else "Ugh!!")
+println(if (areYouHappy_?) "Nice" else "Ugh!!")
 
 // Or we can also have reserve works in backtick
 def `return`(n: Int) = n + 5

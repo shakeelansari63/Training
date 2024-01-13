@@ -1,7 +1,7 @@
 // We know in Java, we have a main mothod which is static
 // We can have it in Scala using Obejcy
 object Runner {
-  def main(args: Array[String]) = println("Hello from Scala")
+    def main(args: Array[String]) = println("Hello from Scala")
 }
 // Lets try to run this, you will immediatly get output.
 // This is because main is special method, which will be executed immediately

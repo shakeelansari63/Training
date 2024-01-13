@@ -13,18 +13,18 @@
 // Example of Case class
 // This is our regular class
 class Employee10(val firstName: String, val lastName: String) {
-  require(firstName.nonEmpty, "First Name cannot be empty")
-  require(lastName.nonEmpty, "Last Name cannot be empty")
+    require(firstName.nonEmpty, "First Name cannot be empty")
+    require(lastName.nonEmpty, "Last Name cannot be empty")
 
-  def fullName = s"$firstName $lastName"
+    def fullName = s"$firstName $lastName"
 }
 
 // This is our case class
 case class Employee11(firstName: String, lastName: String) {
-  require(firstName.nonEmpty, "First Name cannot be empty")
-  require(lastName.nonEmpty, "Last Name cannot be empty")
+    require(firstName.nonEmpty, "First Name cannot be empty")
+    require(lastName.nonEmpty, "Last Name cannot be empty")
 
-  def fullName = s"$firstName $lastName"
+    def fullName = s"$firstName $lastName"
 }
 
 // Lets try to create objects of these classes and compare

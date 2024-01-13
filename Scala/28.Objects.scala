@@ -3,7 +3,7 @@
 // An object will have only 1 instance meaning it is singleton / static
 // e.g.
 object myObejct {
-  def sayHello = println("Hello")
+    def sayHello = println("Hello")
 }
 
 myObejct.sayHello
@@ -13,7 +13,7 @@ println(myObejct)
 // We cannot inherit from Object, But Object can inherit from other class object
 case class T1Class(msg: String)
 object myObject2 extends T1Class("How are you??") {
-  def greet = println(msg)
+    def greet = println(msg)
 }
 
 myObject2.greet

@@ -6,14 +6,14 @@
 // We just skip the implementation in Abstract method
 // e.g.
 abstract class Person {
-  def firstName: String
-  def lastName: String
-  def fullName: String
+    def firstName: String
+    def lastName: String
+    def fullName: String
 }
 
 // Lets extend the person Abstract method in our case class
 case class Employee12(firstName: String, lastName: String) extends Person {
-  def fullName: String = s"$firstName $lastName"
+    def fullName: String = s"$firstName $lastName"
 }
 
 val empjd = Employee12("Jane", "Doe")

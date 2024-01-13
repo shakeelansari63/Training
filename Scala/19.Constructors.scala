@@ -8,38 +8,38 @@ class ClassWithAuxilliaryConstructor(
     val param2: String,
     val param3: Int
 ) {
-  // This is axilliary constructor which takes only 2 params
-  def this(param1: String, param2: String) = this(param1, param2, 0)
+    // This is axilliary constructor which takes only 2 params
+    def this(param1: String, param2: String) = this(param1, param2, 0)
 
-  // We can also have another constructor with only 1 parameter and some print statement.
-  // But call to this() shoudl be first statement
-  def this(param1: String) = {
-    this(param1, "", 0)
-    println("Constructor with 1 parameter called")
-  }
+    // We can also have another constructor with only 1 parameter and some print statement.
+    // But call to this() shoudl be first statement
+    def this(param1: String) = {
+        this(param1, "", 0)
+        println("Constructor with 1 parameter called")
+    }
 
-  // Since this call is first in constructor, we can chain auxilliary constructor.
-  // Where some constructor in chain calls primary constructor
-  def this() = {
-    this("") // This calls Constructor with 1 parameter
-    println("Constructor with no parameters called")
-  }
+    // Since this call is first in constructor, we can chain auxilliary constructor.
+    // Where some constructor in chain calls primary constructor
+    def this() = {
+        this("") // This calls Constructor with 1 parameter
+        println("Constructor with no parameters called")
+    }
 }
 
 // Lets create soem objects
 val cwac1 =
-  new ClassWithAuxilliaryConstructor(
-    "A",
-    "B",
-    1
-  ) // This calls primary constructor
+    new ClassWithAuxilliaryConstructor(
+      "A",
+      "B",
+      1
+    ) // This calls primary constructor
 println(s"${cwac1.param1} ${cwac1.param2} ${cwac1.param3}")
 
 val cwac2 =
-  new ClassWithAuxilliaryConstructor(
-    "C",
-    "D"
-  ) // This calls Constructor with 2 parameters
+    new ClassWithAuxilliaryConstructor(
+      "C",
+      "D"
+    ) // This calls Constructor with 2 parameters
 println(s"${cwac2.param1} ${cwac2.param2} ${cwac2.param3}")
 
 val cwac3 = new ClassWithAuxilliaryConstructor(

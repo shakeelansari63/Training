@@ -2,16 +2,15 @@
 // In order to override method in subclass, the signature must be same as parent class
 // e.g.
 class Employee8(val firstName: String, val lastName: String) {
-  require(firstName.nonEmpty, "First Name cannot be empty")
-  require(lastName.nonEmpty, "Last Name cannot be empty")
+    require(firstName.nonEmpty, "First Name cannot be empty")
+    require(lastName.nonEmpty, "Last Name cannot be empty")
 
-  def fullName = s"$firstName $lastName"
+    def fullName = s"$firstName $lastName"
 }
 
-class Manager8(firstName: String, lastName: String, val department: String)
-    extends Employee8(firstName, lastName) {
-  // Lets Override the fullName method
-  override def fullName = s"$firstName $lastName from $department Department"
+class Manager8(firstName: String, lastName: String, val department: String) extends Employee8(firstName, lastName) {
+    // Lets Override the fullName method
+    override def fullName = s"$firstName $lastName from $department Department"
 }
 
 val jd = new Employee8("John", "Doe")
@@ -40,29 +39,29 @@ println(acEmp.isInstanceOf[Employee8])
 
 // Example
 class Employee9(val firstName: String, val lastName: String) {
-  require(firstName.nonEmpty, "First Name cannot be empty")
-  require(lastName.nonEmpty, "Last Name cannot be empty")
+    require(firstName.nonEmpty, "First Name cannot be empty")
+    require(lastName.nonEmpty, "Last Name cannot be empty")
 
-  def fullName = s"$firstName $lastName"
+    def fullName = s"$firstName $lastName"
 
-  // Overriding default equals methods
-  override def equals(x: Any): Boolean = if (!x.isInstanceOf[Employee9]) false
-  else {
-    val otherEmp = x.asInstanceOf[Employee9]
-    this.firstName == otherEmp.firstName && this.lastName == otherEmp.lastName
-  }
+    // Overriding default equals methods
+    override def equals(x: Any): Boolean = if (!x.isInstanceOf[Employee9]) false
+    else {
+        val otherEmp = x.asInstanceOf[Employee9]
+        this.firstName == otherEmp.firstName && this.lastName == otherEmp.lastName
+    }
 
-  // Override default HashCode
-  override def hashCode(): Int = {
-    var result = 19
-    result = 31 * result + firstName.hashCode
-    result = 31 * result + lastName.hashCode
-    result
-  }
+    // Override default HashCode
+    override def hashCode(): Int = {
+        var result = 19
+        result = 31 * result + firstName.hashCode
+        result = 31 * result + lastName.hashCode
+        result
+    }
 
-  // Override default toString
-  override def toString(): String =
-    s"Employee(FirstName = $firstName, LastName = $lastName)"
+    // Override default toString
+    override def toString(): String =
+        s"Employee(FirstName = $firstName, LastName = $lastName)"
 }
 
 // Employee 8 has default implementation of equals, hashCode and toString. And Employee9 has overriden ones

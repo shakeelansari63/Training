@@ -13,29 +13,29 @@ case class CompanyEmployee private (
 
 // And Companion Object will be factory
 object CompanyEmployee {
-  // This is replacement of primary constructor
-  def create(
-      firstName: String,
-      lastName: String,
-      title: String,
-      hireDate: LocalDate
-  ) = CompanyEmployee(firstName, lastName, title, hireDate)
+    // This is replacement of primary constructor
+    def create(
+        firstName: String,
+        lastName: String,
+        title: String,
+        hireDate: LocalDate
+    ) = CompanyEmployee(firstName, lastName, title, hireDate)
 
-  // And this override method provide way to default hireDate to today
-  def create(firstName: String, lastName: String, title: String) =
-    CompanyEmployee(firstName, lastName, title, LocalDate.now())
+    // And this override method provide way to default hireDate to today
+    def create(firstName: String, lastName: String, title: String) =
+        CompanyEmployee(firstName, lastName, title, LocalDate.now())
 }
 
 // Main Runner
 object CERunner extends App {
-  val ce1 = CompanyEmployee.create(
-    "Jane",
-    "Depp",
-    "Programmer",
-    LocalDate.of(2023, 10, 5)
-  )
-  val ce2 = CompanyEmployee.create("Mohan", "Bhargav", "Manager")
+    val ce1 = CompanyEmployee.create(
+      "Jane",
+      "Depp",
+      "Programmer",
+      LocalDate.of(2023, 10, 5)
+    )
+    val ce2 = CompanyEmployee.create("Mohan", "Bhargav", "Manager")
 
-  println(ce1)
-  println(ce2)
+    println(ce1)
+    println(ce2)
 }

@@ -10,8 +10,8 @@ println(3.asInstanceOf[Double])
 
 // They can be used together
 // example
-def decide(a: Any) = if (a.isInstanceOf[Int]) a.asInstanceOf[Int] + 1 
-                    else -1
+def decide(a: Any) = if (a.isInstanceOf[Int]) a.asInstanceOf[Int] + 1
+else -1
 
-println(decide(4))       // Return 5
+println(decide(4)) // Return 5
 println(decide("Hello")) // Return -1

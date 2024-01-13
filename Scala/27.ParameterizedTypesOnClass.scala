@@ -36,12 +36,12 @@ println(c3.second.first)
 // We can also have Parameterized Method
 // Class methods gets access to Types
 case class Couple2[T, U](first: T, second: U) {
-  def swap: Couple2[U, T] = Couple2(second, first)
+    def swap: Couple2[U, T] = Couple2(second, first)
 }
 
 // Class methods can also take another type as input
 case class Box2[T](inp: T) {
-  def coupleWith[U](other: U) = Box2(Couple2(inp, other))
+    def coupleWith[U](other: U) = Box2(Couple2(inp, other))
 }
 
 val b4 = Box2(3) // This creates Box2[Int]

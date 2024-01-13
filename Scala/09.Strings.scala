@@ -7,8 +7,8 @@ println(a)
 
 // But for Multiline Strings, we have to Concatenate multiple lines with \n at end
 val b: String = "Hello \n" +
-  "Hi \n" +
-  "Buh Bye"
+    "Hi \n" +
+    "Buh Bye"
 println(b)
 
 // But there are smart strings in Scala where we can generate multi line strings easily
