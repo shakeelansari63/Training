@@ -1,6 +1,5 @@
 // Map Function is way to iterate over element of collection and generate new collection
 // e.g.
-import java.lang._
 object MapFunctions extends App {
     // Map Function On List
     val a = List(1, 2, 3, 4, 5)
