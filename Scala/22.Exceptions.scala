@@ -15,3 +15,20 @@ try {
       "Continuing the app..."
     ) // Finally will always run whether exception is thrown or not
 }
+
+import scala.util.{Try, Success, Failure}
+
+// There is more functional way for using Try Catach Block
+def iMayThrowError: Try[String] = Try(throw new IllegalArgumentException("This is bad data"))
+
+def iMayThrowError(x: String): Try[String] = Try("Hello " + x)
+
+// Try to Get Data
+// val tryGetData: Try[String] = iMayThrowError // Throws error
+val tryGetData: Try[String] = iMayThrowError("Damon") // Gives result
+
+// And we use pattern matching to evaluate the result
+tryGetData match {
+    case Success(x)  => println(x)
+    case Failure(ex) => println(ex.getMessage)
+}

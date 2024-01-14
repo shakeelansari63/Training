@@ -20,3 +20,10 @@ def find(x: Int) = x match {
 }
 
 println(find(12))
+
+// Pattern Matching can also have some guards
+val amt = 50
+amt match {
+    case x if x <= 50 => println(s"$x Amount is less than or equal to 50")
+    case x if x > 50  => println(s"$x Amount is greater than 50")
+}
