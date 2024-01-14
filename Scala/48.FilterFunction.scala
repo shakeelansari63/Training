@@ -42,6 +42,6 @@ object FilterFunction extends App {
     println((1 to 10).filter(_ % 3 == 0)) // this is list
     println((1 to 10).withFilter(_ % 3 == 0)) // this is traversable object
     println((1 to 10).withFilter(_ % 3 == 0).map(i => i))
-    // the traversaable object is evaluated by map and identity function
+    // the traversable object is evaluated by map and identity function
 
 }
