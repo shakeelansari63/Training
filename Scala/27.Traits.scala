@@ -40,3 +40,12 @@ println(xp.gearType)
 println(xp.maxSpeed)
 println(xp.fuelCapacity)
 println(xp.engineOil)
+
+// We know Traits cannot be instanciated, but there is a way to instanciate them using anonymous class
+// e.g.
+val speedObj = new Speed {
+    override def maxSpeed: Double = 250
+}
+
+println(speedObj) // speedObj is not object of Speed but its object of Anonymous Class $$anon$$
+println(speedObj.maxSpeed) // And we can access the max speed method on speedObj
