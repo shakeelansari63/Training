@@ -33,4 +33,15 @@ object FilterFunction extends App {
     // Since Option has only one value. If filter is applied, it will either return that Some or None
     println(Some(5).filter(_ % 2 == 0)) // 5 is not even so return None
     println(Some(4).filter(_ % 2 == 0)) // 4 is even so return Some(4)
+
+    // Filter are not very efficient with large collections.
+    // This is because they return complete collection
+    // So Scala came with new method, withFilter
+    // withFilter is lazy evaluator making it more memory efficient
+    // But we invoke withFilter same as filter, there is no difference
+    println((1 to 10).filter(_ % 3 == 0)) // this is list
+    println((1 to 10).withFilter(_ % 3 == 0)) // this is traversable object
+    println((1 to 10).withFilter(_ % 3 == 0).map(i => i))
+    // the traversaable object is evaluated by map and identity function
+
 }
