@@ -110,4 +110,32 @@ object SelfTypes extends App {
     println(VegetarianAthlete3.canEat(Bread))
 
     // So in Short, Self Types are used for creting required relation between 2 classes/ traits
+
+    // What self type also allows us to do is, implements some methods in trait itself with help of Injected Class
+    // e.g.
+    trait Person4 {
+        def hasAllergies(thing: Edible): Boolean
+    }
+
+    trait Diet4 { self: Person4 => // This is self type
+        def canEat(thing: Edible): Boolean =
+            if (self.hasAllergies(thing)) false
+            else true
+    }
+
+    // So when we create the child traits an actually implement the traits, we don't have to implement the canEat method
+    trait Adult4 extends Person4
+    trait Child4 extends Person4
+    trait Vegetarian4 extends Diet4 with Person4
+    trait Carnivore4 extends Diet4 with Person4
+
+    case object VegetarianAthlete4 extends Vegetarian4 with Adult4 {
+        override def hasAllergies(thing: Edible): Boolean = thing match {
+            case Fish | Chicken  => true
+            case Spinach | Bread => false
+        }
+    }
+
+    println(VegetarianAthlete4.canEat(Fish))
+    println(VegetarianAthlete4.canEat(Spinach))
 }
