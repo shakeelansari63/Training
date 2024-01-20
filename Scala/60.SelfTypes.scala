@@ -138,4 +138,24 @@ object SelfTypes extends App {
 
     println(VegetarianAthlete4.canEat(Fish))
     println(VegetarianAthlete4.canEat(Spinach))
+
+    // And if we use This instead of Self, we dont have to self.XX, we can simply use the method as it is part of this class
+    trait Diet5 { this: Person4 => // This is self type
+        def canEat(thing: Edible): Boolean =
+            if (hasAllergies(thing)) false
+            else true
+    }
+
+    trait Vegetarian5 extends Diet5 with Person4
+    trait Carnivore5 extends Diet5 with Person4
+
+    case object VegetarianAthlete5 extends Vegetarian5 with Adult4 {
+        override def hasAllergies(thing: Edible): Boolean = thing match {
+            case Fish | Chicken  => true
+            case Spinach | Bread => false
+        }
+    }
+
+    println(VegetarianAthlete5.canEat(Fish))
+    println(VegetarianAthlete5.canEat(Bread))
 }
