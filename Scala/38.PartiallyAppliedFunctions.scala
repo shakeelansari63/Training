@@ -1,6 +1,6 @@
 // Partially applied Function is a way to Convert a method into Function
 // Example
-object PartialFunction extends App {
+object PartialyAppliedFunctions extends App {
     // Lets say we have a class with following 2 methods
     class Foo(x: Int) {
         def bar(y: Int) = x + y
@@ -14,8 +14,11 @@ object PartialFunction extends App {
 
     // bar is simple method, we can covert it into function as follow
     val f1 = x.bar _
-    // That last _ is way to indicatte it as partial method, and this makes f1 as function
-    println(f1(5))
+    // That last _ is way to indicate it as partially applied method, and this makes f1 as function
+    // Under the hood, it is same as
+    val fx1 = (y: Int) => x.bar(y)
+    println(f1(5)) // 15
+    println(fx1(5)) // 15
 
     // Now lets say we have method with 2 params, and we want it to be converted to a Function1
     val f2 = x.baz1(4, _)
