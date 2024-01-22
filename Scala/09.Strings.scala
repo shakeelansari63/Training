@@ -53,3 +53,27 @@ println(s"Your age is ${e}")
 // f"" string is advanced and can be used for more formating. It combines s string and String Format
 // example - We can define a float precission format.
 println(f"Your age is ${e}%1.2f")
+
+// Some String Functions
+// Get Character at position
+val f: String = "Hello this is a simple string !!!"
+println(f.charAt(3)) // Returns `l`
+
+// Concatenate
+println("Hello".concat(" I am Scala"))
+
+// Check if String has substring
+println("Hello".contains("Holt"))
+
+// Index of Character / String
+println("Hello".indexOf("ell"))
+println("Hello".indexOfSlice("llo"))
+
+// Replace Character or String
+println("Hello Scala".replace("Scala", "Java"))
+
+// Get Substring
+println("Hello Scala Devs".substring(6, 11))
+
+// Trim Leading and Trailing spaces
+println("    Hello I am Scala Dev       ".trim)
