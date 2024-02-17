@@ -1,4 +1,4 @@
-import 'package:app06_meals_app/screens/categories_screen.dart';
+import 'package:app06_meals_app/screens/tab_screen.dart';
 import 'package:app06_meals_app/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: theme,
-      home: const CategoriesScreen(),
+      home: const TabScreen(),
     );
   }
 }
