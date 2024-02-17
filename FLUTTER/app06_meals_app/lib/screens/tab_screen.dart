@@ -1,5 +1,6 @@
 import 'package:app06_meals_app/screens/categories_screen.dart';
 import 'package:app06_meals_app/screens/meals_screen.dart';
+import 'package:app06_meals_app/widgets/main_drawer.dart';
 import 'package:flutter/material.dart';
 
 class TabScreen extends StatefulWidget {
@@ -18,6 +19,13 @@ class _TabScreenState extends State<TabScreen> {
     });
   }
 
+  void _selectDrawermenu(String id) {
+    if (id == 'filters') {
+    } else {
+      Navigator.of(context).pop();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     Widget screen = const CategoriesScreen();
@@ -31,6 +39,9 @@ class _TabScreenState extends State<TabScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
+      ),
+      drawer: MainDrawer(
+        onMenuSelected: _selectDrawermenu,
       ),
       body: screen,
       bottomNavigationBar: BottomNavigationBar(

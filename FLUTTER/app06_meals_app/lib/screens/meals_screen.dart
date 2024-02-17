@@ -31,7 +31,7 @@ class MealsScreen extends StatelessWidget {
         children: [
           Text(
             'Uh Oh... Nothing found here',
-            style: Theme.of(context).textTheme.headlineLarge!.copyWith(
+            style: Theme.of(context).textTheme.titleLarge!.copyWith(
                   color: Theme.of(context).colorScheme.onBackground,
                 ),
           ),
