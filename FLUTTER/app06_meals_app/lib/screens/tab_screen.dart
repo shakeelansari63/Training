@@ -1,3 +1,4 @@
+import 'package:app06_meals_app/providers/favourites_provider.dart';
 import 'package:app06_meals_app/providers/meal_provider.dart';
 import 'package:app06_meals_app/screens/categories_screen.dart';
 import 'package:app06_meals_app/screens/filters_screen.dart';
@@ -49,8 +50,11 @@ class _TabScreenState extends ConsumerState<TabScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final availableMealsFromProvider =
-        ref.watch(mealProvider); // Ref added automatically
+    // Ref added automatically to read provider
+    final availableMealsFromProvider = ref.watch(mealProvider);
+
+    final favMeals = ref.watch(favouritesProvider);
+
     final availableMeals = availableMealsFromProvider.where((meal) {
       if (_selectedFilters.glutenFree && !meal.isGlutenFree) return false;
       if (_selectedFilters.lactoseFree && !meal.isLactoseFree) return false;
@@ -65,7 +69,7 @@ class _TabScreenState extends ConsumerState<TabScreen> {
     String title = 'Categories';
 
     if (_selectedTab == 1) {
-      screen = const MealsScreen(meals: []);
+      screen = MealsScreen(meals: favMeals);
       title = 'Your Favorites';
     }
 
