@@ -40,19 +40,34 @@ class MealDetailScreen extends ConsumerWidget {
                 );
               }
             },
-            icon: Icon(isFav ? Icons.favorite : Icons.favorite_border),
+            icon: AnimatedSwitcher(
+              duration: Durations.medium1, // ~250ms
+              transitionBuilder: (child, animation) => FadeTransition(
+                opacity: animation, // Give Animation Controller
+                child: child,
+              ),
+              // We also need to add key to icon to tell Flutter that icon changed
+              child: Icon(
+                isFav ? Icons.favorite : Icons.favorite_border,
+                key: ValueKey(isFav),
+              ),
+            ),
           ),
         ],
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            FadeInImage(
-              placeholder: MemoryImage(kTransparentImage),
-              image: NetworkImage(meal.imageUrl),
-              height: 300,
-              width: double.infinity,
-              fit: BoxFit.cover,
+            Hero(
+              // Also wrap meal detail in hero with same tag for animation to work
+              tag: meal.id,
+              child: FadeInImage(
+                placeholder: MemoryImage(kTransparentImage),
+                image: NetworkImage(meal.imageUrl),
+                height: 300,
+                width: double.infinity,
+                fit: BoxFit.cover,
+              ),
             ),
             Container(
               padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 15),
