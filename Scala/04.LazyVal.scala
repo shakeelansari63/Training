@@ -1,4 +1,4 @@
-// Lazy vals are not evaluated on forst call. They are evaluated when they are called.
+// Lazy vals are not evaluated on first call. They are evaluated when they are called.
 // A subsequest call will only return value and will not re-evaluate
 // Example
 lazy val a = { println("Evaluated"); 5 } // Print will not be called here
