@@ -1,4 +1,4 @@
-using _01_NewBlaozrApp.Components;
+using _01_FirstBalzorApp.Components;
 
 var builder = WebApplication.CreateBuilder(args);
 
