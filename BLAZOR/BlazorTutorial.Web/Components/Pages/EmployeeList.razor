@@ -5,6 +5,8 @@
 
 <h1>Employee List!</h1>
 
+@rendermode @(new InteractiveServerRenderMode(prerender: false))
+
 @if (Employees == null) 
 {
     <div class="spinner"></div>
