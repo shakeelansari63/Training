@@ -246,4 +246,63 @@ RETURN p.name, COUNT(game) AS games_playes, AVG(game.points) AS avg_points_per_g
 | MAX     | Maximum                       |
 | MIN     | Minimum                       |
 | COLLECT | Collect values in single list |
-| STDEV   | Standard Ddeviation           |
+| STDEV   | Standard Deviation            |
+
+## Delete Nodes and Relationships
+
+### Delete Nodes
+
+We can delete a node by first searching it and then deleting it.
+e.g.
+
+```cypher
+MATCH (a:SOMETYPE {someproperty: 'some value'})
+DELETE a
+```
+
+But this won't delete the node if it has active relationships. This is because neo4j tries to avoid dangling relationships.
+
+So if we want to delete a node which has active relationships, we should delete its relationships as well. And this is done with `DETACH DELETE`
+e.g. Following query deletes a node for 'Ja Morant' and its relationships as well.
+
+```cypher
+MATCH (ja {name: 'Ja Morant'})
+DETACh DELETE ja
+```
+
+### Delete Relationships
+
+Deleting relationship is easy. Relationships have no dependency and hence can be deleted quickly.
+
+e.g. Following query deletes PLAYS_FOR relationship between Joel and hit team.
+
+```cypher
+MATCH (joel {name: 'Joel Embiid'}) -[r:PLAYS_FOR]-> (:TEAM)
+DELETE r
+```
+
+## Creating Nodes and Relationships
+
+### Creating Nodes
+
+Nodes can be created using `CREATE` keyword within `()`.  
+e.g. Following query creates a node
+
+```cypher
+CREATE (:MOVIE {name: "YJHD", release: 2013})
+```
+
+Node can also be created with multiple Labels
+e.g.
+
+```cypher
+CREATE (:MOVIE:WEBSERIES {name: "Bahubali"})
+```
+
+Above query only creates node, but if you want to return node after creating it, use `RETURN`.  
+e.g.
+
+```cypher
+CREATE (bb:MOVIE:WEBSERIES {name: "Bahubali"})
+RETURN bb
+```
