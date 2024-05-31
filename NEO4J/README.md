@@ -11,7 +11,7 @@ Neo4j uses cypher language to store and retrieve data from Database.
 
 ## Data for initial setup
 
-Data for initial setup can be picked from [here](https://github.com/shakeelansari63/Training/blob/main/NEO4J/initial-data.cypher)
+Data for initial setup can be picked from [here](https://github.com/shakeelansari63/Training/blob/master/NEO4J/initial-data.cypher)
 
 ## Querying Nodes
 
