@@ -122,6 +122,18 @@ WHERE NOT (p.weight >= 100 AND p.height <= 2)
 RETURN p
 ```
 
+### Filtering node by ID
+
+Querying a node by ID is little different that other properties since ID in builtin field.
+
+e.g. Following query will return a node with ID `0`.
+
+```cypher
+MATCH (n)
+WHERE ID(n) = 0
+RETURN n
+```
+
 ### Skip and Limit the number of records
 
 If we want to streap data page wise, we can utilize `SKIP` and `LIMIT` to limit the return size.
@@ -311,4 +323,88 @@ e.g.
 ```cypher
 CREATE (bb:MOVIE:WEBSERIES {name: "Bahubali"})
 RETURN bb
+```
+
+### Creating Nodes with Relationships
+
+We can use the arrow syntax for creating new node with relationships.  
+e.g. Following query creates 2 nodes and 1 relationship.
+
+```cypher
+CREATE (:ACTOR {name: "Prabhas"}) -[:ACTED_IN {salary: 20000000}]-> (:MOVIE {name: "Bahubali"})
+```
+
+### Creating Relationship between existing Nodes
+
+To Create a relationship between existing notes, we will first find the nodes by match and then create relationship.  
+Lets create following nodes first -
+
+```cypher
+CREATE (:MOVIE {name: "Pushpa"}),
+(:ACTOR {name: "Allu Arjun"})
+```
+
+Currently these nodes are not connected. But we can connect them with following.
+
+```cypher
+MATCH (aa:ACTOR {name: "Allu Arjun"}),
+(pushpa:MOVIE {name: "Pushpa"})
+CREATE (aa) -[:ACTED_IN]-> (pushpa)
+```
+
+And now we have relationship between these nodes.
+
+## Update Data
+
+### Update Nodes
+
+We can add new properties or update existing properties of Node using `SET` operator.
+
+e.g. Following query will add new property release to movie Pushpa and update its name.
+
+```cypher
+MATCH (p:MOVIE {name: "Pushpa"})
+SET p.release = 2020,
+p.name = "Pushpa, The Rise"
+RETURN p
+```
+
+We can also add new labels to node
+
+```cypher
+MATCH (p:MOVIE {name: "Pushpa, The Rise"})
+SET p:HITMOVIE
+RETURN p
+```
+
+### Update Relationships
+
+Updating relationship is same as node. We match to find it and the use `SET` operator to update it.
+
+e.g. Following query will update salary of Allu Arjun for Pushpa. Right now we don't have salary on ACTED_IN.
+
+```cypher
+MATCH (:ACTOR {name: "Allu Arjun"}) -[worked:ACTED_IN]-> (:MOVIE {name: "Pushpa, The Rise"})
+SET worked.salary = 30000000
+RETURN worked
+```
+
+### Delete Properties
+
+For deleting properties use `REMOVE` operator with match.
+
+e.g. Following query will remove release property of Pushpa Movie
+
+```cypher
+MATCH (n:MOVIE {name: "Pushpa, The Rise"})
+REMOVE n.release
+RETURN n
+```
+
+And we can also remove labels
+
+```cypher
+MATCH (n:MOVIE {name: "Pushpa, The Rise"})
+REMOVE n:HITMOVIE
+RETURN n
 ```
