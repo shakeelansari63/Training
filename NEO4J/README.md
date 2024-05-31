@@ -226,3 +226,24 @@ RETURN lebron, p, t
 ```
 
 ## Data Agregation
+
+Along with selecting some nodes, we can also aggregate some data.  
+We have a PLAYED_AGAINST relation between teams and players which has some properties. We aggreagte the data there.  
+e.g. Following query returns each player and average point for their each game.
+
+```cypher
+MATCH (p:PLAYER) -[game:PLAYED_AGAINST]-> (:TEAM)
+RETURN p.name, COUNT(game) AS games_playes, AVG(game.points) AS avg_points_per_game
+```
+
+#### There are many agregation methods which can be used
+
+| Methods | Usage                         |
+| ------- | ----------------------------- |
+| AVG     | Average                       |
+| COUNT   | Count                         |
+| SUM     | Sum all                       |
+| MAX     | Maximum                       |
+| MIN     | Minimum                       |
+| COLLECT | Collect values in single list |
+| STDEV   | Standard Ddeviation           |
