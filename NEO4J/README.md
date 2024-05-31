@@ -3,9 +3,15 @@
 Neo4j is a graph databse which stores and shows data in graph data structure.  
 Neo4j uses cypher language to store and retrieve data from Database.
 
+## Crash Course
+
+![Video Link](https://www.youtube.com/watch?v=8jNPelugC2s)
+
+[Project](https://github.com/harblaith7/Neo4j-Crash-Course/tree/main)
+
 ## Data for initial setup
 
-Data for initial setup can be picked from [here](https://github.com/harblaith7/Neo4j-Crash-Course/blob/main/01-initial-data.cypher)
+Data for initial setup can be picked from [here](https://github.com/shakeelansari63/Training/blob/main/NEO4J/initial-data.cypher)
 
 ## Querying Nodes
 
