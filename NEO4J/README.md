@@ -5,7 +5,7 @@ Neo4j uses cypher language to store and retrieve data from Database.
 
 ## Crash Course
 
-![Video Link](https://www.youtube.com/watch?v=8jNPelugC2s)
+[Video Link](https://www.youtube.com/watch?v=8jNPelugC2s)
 
 [Project](https://github.com/harblaith7/Neo4j-Crash-Course/tree/main)
 
