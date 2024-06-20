@@ -157,3 +157,37 @@ alembic downgrade base
 If you run this, you will see the `employee` table has been dropped. And now there is only `alembic_version` table which is empty.
 
 # Automatic Migrations based on SQLAlchemy Models
+
+Follow the steps [here](https://alembic.sqlalchemy.org/en/latest/autogenerate.html) for autogeneration.
+In essence, We can create a model file, which has declarative base. And Declarative base has metadata.
+
+We must pass the Metadata in `env.py` file so that alembic can also have access to the metadata and generate migrations based of differences.
+
+### Create a base model
+
+See `models/base.py`
+
+### Create table models
+
+See `models/company.py`
+
+### Make the models folder to module
+
+See `models/__init__.py`
+This module need to have all classes (Base class and Model classes) so that sqlalchemy is madde aware of all tables.
+
+### Update the `env.py`
+
+```python
+from models import Metadata
+
+target_metadata = Metadata
+```
+
+### Now run `alembic revision`
+
+```bash
+alembic revesion --autogenerate -m "Some message"
+```
+
+And now the generated revision will be based on SQLAlchemy Models
