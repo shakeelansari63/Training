@@ -20,10 +20,10 @@ alembic init test-app
 
 ```
 project-root/
- Ⳑ alembic.ini # This has Alembic Config file
- Ⳑ appname/ # This is base directory for alembic files
-     Ⳑ env.py # This python scripts runs when alembic is ran
-     Ⳑ script.py.mako
-     Ⳑ versions/ # This is where alembic revisions are kept
-         Ⳑ *.py # Alembic revisions
+ └ alembic.ini # This has Alembic Config file
+ └ appname/ # This is base directory for alembic files
+     └ env.py # This python scripts runs when alembic is ran
+     └ script.py.mako
+     └ versions/ # This is where alembic revisions are kept
+         └ *.py # Alembic revisions
 ```
