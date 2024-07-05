@@ -2,3 +2,4 @@ pandas
 notebook
 matplotlib
 jupyterlab-git
+openpyxl
