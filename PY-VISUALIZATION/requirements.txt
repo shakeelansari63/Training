@@ -3,3 +3,5 @@ notebook
 matplotlib
 jupyterlab-git
 openpyxl
+scipy
+seaborn
