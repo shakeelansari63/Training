@@ -5,3 +5,5 @@ jupyterlab-git
 openpyxl
 scipy
 seaborn
+ipywidgets
+plotly
