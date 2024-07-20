@@ -8,3 +8,4 @@ seaborn
 ipywidgets
 plotly
 statsmodels
+folium
