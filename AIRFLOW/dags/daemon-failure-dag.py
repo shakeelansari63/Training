@@ -1,6 +1,6 @@
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
-from datetime import timedelta
+from datetime import timedelta, datetime
 import logging
 import sys
 import time
@@ -33,6 +33,7 @@ dag = DAG(
     default_args = dag_args,
     description = 'Fail dag',
     schedule_interval = None,
+    start_date = datetime.now(),
     tags = ['Daemon tester']
 )
 
@@ -50,7 +51,7 @@ test_my_fnc = PythonOperator(
     python_callable = my_test_fnc,
     op_kwargs = {
         'my_var_1': 'Hello',
-        'send_mail': True
+        'send_mail': 1
     }
 )
 
