@@ -9,3 +9,4 @@ ipywidgets
 plotly
 statsmodels
 folium
+pandas_datareader
