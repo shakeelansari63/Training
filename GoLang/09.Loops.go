@@ -1,5 +1,5 @@
 // Lets try and get some loops
-package main
+package main09
 
 import "fmt"
 

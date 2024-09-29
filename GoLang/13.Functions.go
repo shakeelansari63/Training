@@ -1,4 +1,4 @@
-package main
+package main13
 
 import "fmt"
 
@@ -105,7 +105,7 @@ func callByValue(x, y string) {
 	fmt.Println("Hello", x, y)
 }
 
-//Function to be called by refrence
+// Function to be called by refrence
 func callByReference(x, y *string) {
 	fmt.Println("Hello", *x, *y)
 	*x = "Ted"

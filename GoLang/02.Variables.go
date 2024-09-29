@@ -1,5 +1,5 @@
 // Lets try and get some variables
-package main
+package main02
 
 import (
 	"fmt"     // For Print function
