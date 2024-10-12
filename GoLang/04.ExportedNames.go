@@ -1,4 +1,4 @@
-package main04
+package main
 
 import "fmt"
 

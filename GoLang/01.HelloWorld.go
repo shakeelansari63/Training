@@ -2,7 +2,7 @@
 // Yes it is same as C comments
 
 // This is main package and necessary for main program
-package main01
+package main
 
 // This import Format module which has Printing fuctions
 import "fmt"

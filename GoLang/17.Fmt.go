@@ -1,4 +1,4 @@
-package main17
+package main
 
 import (
 	"fmt"
