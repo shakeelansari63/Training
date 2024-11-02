@@ -9,6 +9,8 @@ import (
 )
 
 func main() {
+	// Convert data types
+	fmt.Println("----- Convert data types -----")
 	// Lets say we have a string where some value exist in float
 	// While the data type is string, we cannot perform any numeric opration
 	// So we have to convert the data type of the variable to float

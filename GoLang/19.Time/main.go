@@ -6,6 +6,8 @@ import (
 )
 
 func main() {
+	// Time
+	fmt.Println("----- Time -----")
 	// Lets see how to handle time in Go
 	// Go has library `time` for managing dates and times
 	currentTime := time.Now()

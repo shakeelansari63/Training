@@ -9,6 +9,8 @@ import (
 // We will use bufio builtin package to read user input from Standard Input
 
 func main() {
+	// Read UserInput
+	fmt.Println("----- Read User Input -----")
 	// To read input from Standard in we need buffer reader
 	reader := bufio.NewReader(os.Stdin)
 
