@@ -49,6 +49,15 @@ go run -race [programname].go
 go build github.com/[username]/[projectname]
 ```
 
+## If you just want to buid final binary for os which is not current os, that is also possible 
+```
+GOOS="windows" go build
+```
+Here we can use - 
+ - windows : For windows
+ - linux : For Linux
+ - darwin : For MacOs
+
 ## Install Binary
 
 ```
