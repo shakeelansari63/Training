@@ -18,7 +18,7 @@ func main() {
 	fmt.Println("value if a: ", a, "address of a i.e. in b", b, "value in address b: ", *b)
 
 	// Here & is address operator which give address
-	// Whereas * is dereferencing oeprator which gives value at address
+	// Whereas * is dereferencing operator which gives value at address
 	// We can also change value by derefering b
 	*b = 32
 	fmt.Println("value if a: ", a, "address of a i.e. in b", b, "value in address b: ", *b)
