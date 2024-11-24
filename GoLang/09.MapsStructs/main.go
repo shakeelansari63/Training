@@ -12,7 +12,7 @@ type MyStruct struct {
 	friends []string
 }
 
-// Struct does not support ineritance
+// Struct does not support inheritance
 // But it suppport composition
 // here we have embedded MyStruct in MyStruct2
 // So we can access all elemnets of MyStruct from object of MyStruct2
@@ -60,7 +60,7 @@ func main() {
 	// But we know key 2 does not exist in map. So in order to chek whether key2 exist in map
 	// or it doesn't we can use ,ok syntax and get return code in boolean
 	getkey2, ok := mp1["key2"]
-	fmt.Println("Key 2 value: ", getkey2, "|", ok) // Here ok=fale tells the key did not exist
+	fmt.Println("Key 2 value: ", getkey2, "|", ok) // Here ok=false tells the key did not exist
 
 	// Len function can be used to get length of map
 	fmt.Println("Length of map1 is: ", len(mp1))
@@ -83,6 +83,9 @@ func main() {
 
 	// Individual element can be accessed via dot(.) syntax
 	fmt.Println("Name of st1: ", st1.name)
+
+	// If we want more details of Struct, we can use %+v with Printf. It also returns keys os structs
+	fmt.Printf("%+v\n", st1)
 
 	// In above exampel we declared teh struct outside and we can create any objects of taht struct
 	// But if we are just going to create 1 instance we can create anonymous struct

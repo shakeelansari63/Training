@@ -99,7 +99,7 @@ func main() {
 		fmt.Println("Odd number")
 	}
 
-	// Go switch has implicit bread instead of implicit fallthrough in c
+	// Go switch has implicit break instead of implicit fallthrough in c
 	// meaning we don't have to put break after each switch case
 	// But if we have overlapping cases and we want it to fall through
 	// we can use fallthrough keyword
