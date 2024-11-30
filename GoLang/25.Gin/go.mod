@@ -1,4 +1,4 @@
-module 28.Gin
+module 25.Gin
 
 go 1.23.2
 
