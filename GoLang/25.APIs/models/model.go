@@ -13,7 +13,7 @@ type Author struct {
 }
 
 func (course *Course) IsEmpty() bool {
-	return course.Name != ""
+	return course.Name == ""
 }
 
 func (course *Course) CheckNameExist(name string) bool {
