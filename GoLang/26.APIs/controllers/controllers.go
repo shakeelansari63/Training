@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"net/http"
 
-	"25.APIs/data"
-	"25.APIs/models"
+	"26.APIs/data"
+	"26.APIs/models"
 	"github.com/gorilla/mux"
 )
 

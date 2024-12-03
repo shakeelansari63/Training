@@ -1,7 +1,7 @@
 package data
 
 import (
-	"25.APIs/models"
+	"26.APIs/models"
 	"github.com/google/uuid"
 )
 

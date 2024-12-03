@@ -1,4 +1,4 @@
-module 25.APIs
+module 26.APIs
 
 go 1.23.3
 
