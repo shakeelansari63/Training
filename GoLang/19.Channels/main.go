@@ -128,4 +128,37 @@ func main() {
 	}(ch3)
 
 	wg.Wait()
+
+	// Channels can also have default value if they are closed early
+	ch4 := make(chan int)
+
+	wg.Add(2)
+
+	go func() {
+		// This will print 0
+		fmt.Printf("Default value from closed channel is %d\n", <-ch4)
+		wg.Done()
+	}()
+	go func() {
+		close(ch4)
+		wg.Done()
+	}()
+	wg.Wait()
+
+	// But how would we know whether this 0 is from closed channel or is actual value from channel
+	// For this, we should collect the channel value in a varible with 2nd parameter which tells whetehr channel is open
+	ch5 := make(chan int)
+	wg.Add(2)
+
+	go func() {
+		// This will print 0
+		i, isOpen := <-ch5
+		fmt.Printf("Default value from closed channel is %d, and the channel open status is - %v\n", i, isOpen)
+		wg.Done()
+	}()
+	go func() {
+		close(ch5)
+		wg.Done()
+	}()
+	wg.Wait()
 }
