@@ -22,6 +22,10 @@ func main() {
 	fmt.Printf("Floor is %f \n", math.Floor(sqr))
 	fmt.Printf("Ceil is %f \n", math.Ceil(sqr))
 
+	// Exponential and Log
+	fmt.Printf("E is %f \n", math.E)
+	fmt.Printf("ln(E) is %f \n", math.Log(math.E))
+
 	// We can also generate random number using mat library
 	// But first we need to add a random seed so that it does not generate same number very time
 	rand.Seed(time.Now().UnixNano())
