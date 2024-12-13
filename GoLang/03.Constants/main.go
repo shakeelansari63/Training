@@ -31,6 +31,14 @@ const (
 	e
 )
 
+// Iota also support expression. So lets say we just need even numbers in constants
+const (
+	ev1 = (iota + 1) * 2
+	ev2
+	ev3
+	ev4
+)
+
 func main() {
 	// Creating a constant
 	// Const keyword can be used to create constants
@@ -58,4 +66,9 @@ func main() {
 	fmt.Printf("%v, %T\n", q, q)
 	fmt.Printf("%v, %T\n", w, w)
 	fmt.Printf("%v, %T\n", e, e)
+
+	// Even Numbers
+	fmt.Printf("%v, %T\n", ev1, ev1)
+	fmt.Printf("%v, %T\n", ev2, ev2)
+	fmt.Printf("%v, %T\n", ev3, ev3)
 }
