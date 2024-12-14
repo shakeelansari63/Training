@@ -69,6 +69,7 @@ func (r Rectangle) Perimeter() float64 {
 // type error interface {
 // 		Error() string
 // }
+// ```
 // So, if we want to create our own error, we can create a struct which implemnets Error method
 // And it will conform to the error's interface and we will be able to use that custom error struct
 
@@ -100,12 +101,6 @@ func main() {
 	var w Writer = ConsoleWriter{}
 	w.Write([]byte("Hello Console !!!"))
 
-	// We can also have empty interfaces
-	// Since empty interfaces does not have any methods, they can be be assigned any data type
-	// as they don't need to implement any method
-	var Int interface{} = 3
-	fmt.Println(reflect.TypeOf(Int))
-
 	// Lets check the Rectngle struct and see if it really confirms to Geometry interface
 	r := Rectangle{width: 12.3, height: 13.4}
 	// As we don't get any error, we can say Rectangle conforms to Geometry interface
@@ -117,5 +112,22 @@ func main() {
 
 	b, err := divideNumbers(3, 2)
 	fmt.Println("Result:", b, "Error: ", err)
+
+	// We can also have empty interfaces
+	// Since empty interfaces does not have any methods, they can be be assigned any data type
+	// as they don't need to implement any method
+	var i1 interface{} = 3
+	fmt.Println(reflect.TypeOf(i1))
+
+	// But now that this is an interface type, and though we know it has int value, we cannot type cast it
+	// Following will error out
+	// i2 := int(i1)
+	// Its because int casting for interface is not defined
+	// In this case, we can use Type assertion
+	if i2, ok := i1.(int); ok {
+		fmt.Println("Extracted form Interface - ", i2)
+	}
+	// Above logic will not typecast, but will try to extract an int value from interface
+	// And will set OK to boolean based on whether it succeed in doing so or now
 
 }

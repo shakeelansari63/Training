@@ -116,8 +116,8 @@ func main() {
 	}
 
 	// There is also a type switch which is often used in Go
-	// We can check this for interface type which can accept any type of value
-	var num3 interface{} = 2
+	// We can check this for `any`` type which can accept any type of value
+	var num3 any = 2
 	switch num3.(type) {
 	case int, int8, int16, int32, int64:
 		fmt.Println("integer")
