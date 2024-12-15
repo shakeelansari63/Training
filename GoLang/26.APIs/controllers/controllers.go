@@ -41,7 +41,11 @@ func GetCourseById(w http.ResponseWriter, r *http.Request) {
 		course := data.GetCourseById(id)
 
 		if course == nil {
-			json.NewEncoder(w).Encode("Error: No couurse found with given ID")
+			http.Error(
+				w,
+				"Error: No couurse found with given ID",
+				http.StatusNotFound,
+			)
 			return
 		}
 
@@ -59,7 +63,11 @@ func AddNewCourse(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 
 	if r.Body == nil {
-		json.NewEncoder(w).Encode("Error: No data provided")
+		http.Error(
+			w,
+			"Error: No data provided",
+			http.StatusBadRequest,
+		)
 		return
 	}
 
@@ -67,14 +75,22 @@ func AddNewCourse(w http.ResponseWriter, r *http.Request) {
 	json.NewDecoder(r.Body).Decode(&newCourse)
 
 	if newCourse.IsEmpty() {
-		json.NewEncoder(w).Encode("Error: No data provided")
+		http.Error(
+			w,
+			"Error: No data provided",
+			http.StatusBadRequest,
+		)
 		return
 	}
 
 	savedCourse := data.AddCourse(newCourse)
 
 	if savedCourse == nil {
-		json.NewEncoder(w).Encode("Error: Unable to save Course")
+		http.Error(
+			w,
+			"Error: Unable to save Course",
+			http.StatusInternalServerError,
+		)
 		return
 	}
 
@@ -90,12 +106,20 @@ func UpdateCourse(w http.ResponseWriter, r *http.Request) {
 	cid := vars["id"]
 
 	if cid == "" {
-		json.NewEncoder(w).Encode("Error: No course id provided")
+		http.Error(
+			w,
+			"Error: No course id provided",
+			http.StatusBadRequest,
+		)
 		return
 	}
 
 	if r.Body == nil {
-		json.NewEncoder(w).Encode("Error: No data provided")
+		http.Error(
+			w,
+			"Error: No data provided",
+			http.StatusBadRequest,
+		)
 		return
 	}
 
@@ -103,14 +127,22 @@ func UpdateCourse(w http.ResponseWriter, r *http.Request) {
 	json.NewDecoder(r.Body).Decode(&updatedCourse)
 
 	if updatedCourse.IsEmpty() {
-		json.NewEncoder(w).Encode("Error: No data provided")
+		http.Error(
+			w,
+			"Error: No data provided",
+			http.StatusBadRequest,
+		)
 		return
 	}
 
 	finalized := data.UpdateCourse(cid, updatedCourse)
 
 	if finalized == nil {
-		json.NewEncoder(w).Encode("Error: Cannot update the course")
+		http.Error(
+			w,
+			"Error: Cannot update the course",
+			http.StatusInternalServerError,
+		)
 		return
 	}
 
@@ -126,14 +158,22 @@ func DeleteCourse(w http.ResponseWriter, r *http.Request) {
 	cid := vars["id"]
 
 	if cid == "" {
-		json.NewEncoder(w).Encode("Error: No course id provided")
+		http.Error(
+			w,
+			"Error: No course id provided",
+			http.StatusBadRequest,
+		)
 		return
 	}
 
 	deletedCourse := data.DeleteCourseById(cid)
 
 	if deletedCourse == nil {
-		json.NewEncoder(w).Encode("Error: Cannot delete course with provided ID")
+		http.Error(
+			w,
+			"Error: Cannot delete course with provided ID",
+			http.StatusInternalServerError,
+		)
 		return
 	}
 	json.NewEncoder(w).Encode(deletedCourse)
