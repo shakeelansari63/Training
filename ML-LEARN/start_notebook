@@ -1,3 +1,0 @@
-#!/bin/bash -i
-source .venv/bin/activate
-jupyter lab --ServerApp.open_browser=True --ExtensionApp.open_browser=True --notebook-dir=.
