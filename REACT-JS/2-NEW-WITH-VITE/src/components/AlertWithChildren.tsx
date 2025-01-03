@@ -1,11 +1,15 @@
 import { ReactNode } from "react";
 
 interface Props {
-    alertType: string;
+    alertType?: "primary" | "warning" | "danger"; // Optional with provided set of values only
     children: ReactNode;
 }
-const Alert = ({ alertType, children }: Props) => {
-    return <div className={"alert alert-" + alertType}>{children}</div>;
+const Alert = ({ children, alertType = "primary" }: Props) => {
+    return (
+        <div className={"alert alert-dismissible alert-" + alertType}>
+            {children}
+        </div>
+    );
 };
 
 export default Alert;

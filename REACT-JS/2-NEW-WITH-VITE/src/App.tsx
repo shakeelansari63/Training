@@ -12,7 +12,7 @@ export default function App() {
                 onSelected={handleSelect}
             />
             {/* Alert Component with children */}
-            <Alert alertType="primary">Hello World</Alert>
+            <Alert alertType="warning">Hello World</Alert>
         </div>
     );
 }
