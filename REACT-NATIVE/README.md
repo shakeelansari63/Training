@@ -12,14 +12,14 @@ We can also use templates while creating a react native app
 
 e.g.
 
-Blank App
+Blank App 
 
 ```
 npx create-expo-app@latest --template blank
 ```
 
-React Native Elements Themed App
+Blank App with Typescript 
 
 ```
-npx create-expo-app --template @rneui/template
+npx create-expo-app@latest --template blank-typescript
 ```
