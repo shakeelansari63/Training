@@ -1,2 +1,1 @@
-#!/bin/bash -i
 uv run jupyter lab --ServerApp.open_browser=True --ExtensionApp.open_browser=True --notebook-dir=.
