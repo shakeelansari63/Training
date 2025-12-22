@@ -1,4 +1,4 @@
-package ed.java.p009.Loops;
+package ed.java.P009Loops;
 
 public class Main {
 

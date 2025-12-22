@@ -1,4 +1,4 @@
-package ed.java.p010.Methods;
+package ed.java.P010Methods;
 
 public class Main {
 

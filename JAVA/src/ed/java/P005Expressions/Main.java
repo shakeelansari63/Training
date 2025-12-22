@@ -1,4 +1,4 @@
-package ed.java.p005.Expressions;
+package ed.java.P005Expressions;
 
 public class Main {
 

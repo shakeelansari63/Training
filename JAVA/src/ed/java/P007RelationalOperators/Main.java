@@ -1,4 +1,4 @@
-package ed.java.p007.RelationalOperators;
+package ed.java.P007RelationalOperators;
 
 public class Main {
 

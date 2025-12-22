@@ -1,4 +1,4 @@
-package ed.java.p003.Strings;
+package ed.java.P003Strings;
 
 public class Main {
 
@@ -32,5 +32,12 @@ public class Main {
         System.out.println(
             "Escape Sequences for newline and tab: \n\tHello\tWorld"
         );
+
+        // Strings are immutable in Java so if you append anything, it creates new string and change the reference of the variable
+        // If you want to append something to a string, you can use the StringBuilder class
+        StringBuilder sb = new StringBuilder(str3);
+        sb.append(" ");
+        sb.append("!!");
+        System.out.println("Appended String: " + sb.toString());
     }
 }

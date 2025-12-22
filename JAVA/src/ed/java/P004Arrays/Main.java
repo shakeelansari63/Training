@@ -1,4 +1,4 @@
-package ed.java.p004.Arrays;
+package ed.java.P004Arrays;
 
 import java.util.Arrays;
 

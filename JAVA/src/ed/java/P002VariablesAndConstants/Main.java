@@ -1,4 +1,4 @@
-package ed.java.p002.VariablesAndConstants;
+package ed.java.P002VariablesAndConstants;
 
 import java.util.Date;
 

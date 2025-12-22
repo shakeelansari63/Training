@@ -1,4 +1,4 @@
-package ed.java.p008.ControlFlow;
+package ed.java.P008ControlFlow;
 
 public class Main {
 

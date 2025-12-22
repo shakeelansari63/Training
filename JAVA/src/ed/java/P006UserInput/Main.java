@@ -1,4 +1,4 @@
-package ed.java.p006.UserInput;
+package ed.java.P006UserInput;
 
 import java.util.Scanner;
 

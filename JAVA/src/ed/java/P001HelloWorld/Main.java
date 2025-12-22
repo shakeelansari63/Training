@@ -1,4 +1,4 @@
-package ed.java.p001.HelloWorld;
+package ed.java.P001HelloWorld;
 
 public class Main {
 
