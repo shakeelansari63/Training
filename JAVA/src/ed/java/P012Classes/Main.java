@@ -42,5 +42,8 @@ public class Main {
         // Flight 3
         System.out.println("######### Flight - 3 #########");
         flight3.printStatus();
+
+        // We can access static methods to get total flights and average passangers per flight
+        Flight.printTotalInfo();
     }
 }
