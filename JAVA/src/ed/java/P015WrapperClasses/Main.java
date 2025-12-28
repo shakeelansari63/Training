@@ -1,7 +1,5 @@
 package ed.java.P015WrapperClasses;
 
-import java.util.Scanner;
-
 public class Main {
 
     public static void main(String[] args) {
