@@ -17,7 +17,7 @@ my-project/
 │       └── resources/
 └── target/
 ```
-
+  
 ## POM
 `pom.xml` is the heart of a Maven project. It contains all the metadata and configuration information needed to build, test, and deploy your project. Here's an example of a basic `pom.xml` file:
 
@@ -106,3 +106,21 @@ Dependencies with the system scope are included in the project's classpath but a
   
 ### Import
 Dependencies with the import scope are used to import the dependencies of another project. This is typically used when working with multi-module projects.
+  
+## Maven Repos
+Repositories are remote locations where Maven downloads dependencies from. They can be configured in the `<repositories></repositories>` section of the POM file. A maven project can have more than one repos to download dependencies from.
+  
+Here is sample repo declaration in `pom.xml`:
+```xml
+<repositories>
+    <repository>
+        <id>central</id>
+        <url>https://repo.maven.apache.org/maven2</url>
+    </repository>
+</repositories>
+```
+
+### Default Maven Repos
+Maven provide some Central repo where most of the dependencies are hosted.   
+- Central Repository : https://repo.maven.apache.org/maven2
+- Maven Central Repository : https://repo1.maven.org/maven2
